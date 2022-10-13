@@ -1,0 +1,137 @@
+<div class="container-main">
+    <div class="firstSection">
+
+        <!-- Title -->
+        <h1 class="title">{{ 'arrival.inProgress.updateRights.firstSection.title' | translate }}</h1>
+
+        <!-- Form -->
+        <form class="form" [formGroup]="updateFirstSectionRightsForm" (ngSubmit)="onSubmitForm()">
+
+            <!-- FirstLignRights TC Access  -->
+            <div class="firstLignFirstSectionRights">
+
+                <!-- TC Access -->
+                <div class="tcAccessLabel">
+
+                    <div class="sectiontcAccess">
+                        <label class="labelTcAccess info" for="inputTcAccess">{{ 'arrival.inProgress.updateRights.firstSection.tcAccess' | translate }} :</label> 
+                        <p> {{ tcAccessString }}</p>
+                    </div>
+
+                </div>
+
+                <!-- Statut -->
+                <div class="statut"> 
+
+                    <!-- Label Statut -->
+                    <div class="labelStatut">
+                        <label class="labelStatutTcAccess info" for="inputStatutTcAccess">{{ 'arrival.inProgress.updateRights.firstSection.statut' | translate }}</label> 
+                    </div>
+
+                    <!-- Select Statut -->
+                    <select class="selectStatut" *ngIf="this.optionListStatut && !tcAccessStatut" 
+                        formControlName="tcAccess" class="input" id="inputStatutTcAccess">
+                        <option *ngFor="let item of optionListStatut" >{{ item | titlecase }}</option>
+                    </select>
+
+                    <!-- If acces tc doesn't exists -->
+                    <div *ngIf="tcAccessStatut">
+                        <p>{{ tcAccessStatut }}</p>
+                    </div>
+
+                </div>
+
+            </div>
+
+            <!-- SecondLignRights Electronickey and Identifiant -->
+            <div class="secondLignFirstSectionRights">
+
+                <!-- Electronickey -->
+                <div class="electronickey">
+
+                    <div class="sectionElectronickey">
+                        <label class="labelElectronickey info" for="inputElectronickey">{{ 'arrival.inProgress.updateRights.firstSection.electronicKey' | translate }} :</label> 
+                        <p> {{ electronickey }}</p>
+                    </div>
+
+                </div>
+
+                <!-- Identifiant -->
+                <div class="identifiant"> 
+
+                    <!-- Label Identifiant -->
+                    <div class="labelIdentifiant">
+                        <label class="info" for="inputIdentifiant">{{ 'arrival.inProgress.updateRights.firstSection.identifiant' | translate }}</label> 
+                    </div>
+
+                    <!-- Input Identifiant -->
+                    <input type="text" class="input" formControlName="id" *ngIf="!this.electronicKeyEmpty">
+
+                    <!-- If Electronickey doesn't exists -->
+                    <div *ngIf="electronicKeyEmpty">
+                        <p>{{ electronicKeyEmpty }}</p>
+                    </div>
+
+                </div>
+
+            </div>
+
+            <!-- ThirdLignRights Electronickey Location and Statut -->
+            <div class="thirdLignFirstSectionRights">
+
+                <!-- Location -->
+                <div class="location">
+
+                    <div class="sectionLocation">
+                        <label class="labelLocation info" for="inputLocation">{{ 'arrival.inProgress.updateRights.firstSection.location' | translate }} :</label> 
+                        <p> {{ location }}</p>
+                    </div>
+
+                </div>
+
+                <!-- Statut -->
+                <div class="statut"> 
+
+                    <!-- Label Statut -->
+                    <div class="labelStatut">
+                        <label class="labelStatutElectronicKey info" for="inputStatutElectronickey">{{ 'arrival.inProgress.updateRights.firstSection.statut' | translate }}</label> 
+                    </div>
+
+                    <!-- Select Statut -->
+                    <select class="selectStatut" *ngIf="!this.electronicKeyEmpty"
+                        formControlName="statutElectronicKey" class="input" id="inputStatutElectronickey">
+                        <option *ngFor="let item of optionListStatutElectronicKey" >{{ item | titlecase }}</option>
+                    </select>
+
+                    <!-- If Electronickey doesn't exists -->
+                    <div *ngIf="electronicKeyEmpty">
+                        <p>{{ electronicKeyEmpty }}</p>
+                    </div>
+
+                </div>
+
+            </div>
+
+
+            <!-- Update button -->
+            <div class="update">
+                <button class="buttonUpdate" [disabled]="updateFirstSectionRightsForm.invalid">
+                    {{ 'arrival.inProgress.updateRights.update' | translate }}
+                </button>
+            </div>
+
+            <!-- Sucessfull -->
+            <div class="recordingCompleted" *ngIf="recordingCompleted">
+                <p class="confirm">{{ recordingCompleted }}</p>
+            </div>
+
+            <!-- Errors -->
+            <div class="errors" *ngIf="errorField">
+                <p class="error">{{ errorField }}</p>
+            </div>
+            
+
+        </form>
+
+    </div>
+</div>

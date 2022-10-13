@@ -1,0 +1,55 @@
+html {
+    height: 100%
+}
+
+body {
+    height: 100%;
+    width: 100%;
+    margin: 0%;
+    padding: 0%;
+    font-family: Roboto, Arial !important;
+    background-image: url("assets/images/wallpaper.jpg");
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+
+/*
+
+@font-face {
+    font-family: "Roboto";
+    src: url(assets/fonts/Roboto-Light.ttf);
+}
+
+white : background-color: rgba(255, 255, 255);            #FFFFFF
+yellow : background-color: rgba(240, 230, 20);            #F0E614
+grey : background-color: rgba(75, 75, 70);                #4B4B46
+pink : background-color: rgba(215, 0, 75);                #D7004B
+*/
+
+
+
+/*****************************************
+Delete the arrow for the fields (number)
+*****************************************/
+
+/* Firefox */
+input[type=number] {
+    -moz-appearance: textfield;
+}
+ 
+/* Chrome */
+input::-webkit-inner-spin-button,
+input::-webkit-outer-spin-button { 
+	-webkit-appearance: none;
+	margin:0;
+}
+ 
+/* Opéra*/
+input::-o-inner-spin-button,
+input::-o-outer-spin-button { 
+	-o-appearance: none;
+	margin:0
+}
+
+html, body { height: 100%; }
+body { margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif; }

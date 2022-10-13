@@ -1,0 +1,73 @@
+<div class="container-main">
+    <div class="schoolOrCompany">
+
+        <!-- Title -->
+        <h1 class="title">{{ 'arrival.inProgress.updateSchoolOrCompany.title' | translate }} </h1>
+
+        <!-- No Modification -->
+        <div class="unchangeable" *ngIf="this.arrival.typeOfContract.name == this.cdd || this.arrival.typeOfContract.name == this.cdi || this.arrival.typeOfContract.name == this.expat">
+            {{ 'arrival.inProgress.updateSchoolOrCompany.none' | translate }}
+        </div>
+
+        <!-- Form -->
+        <form class="form" [formGroup]="updateSchoolOrCompanyForm" (ngSubmit)="onSubmitForm()"
+        *ngIf="this.arrival.typeOfContract.name == this.stageLess3 || this.arrival.typeOfContract.name == this.stage3AndMore || this.arrival.typeOfContract.name == this.alternant || this.arrival.typeOfContract.name == this.externe">
+
+            <!---------------------------------> 
+            <!-- Container list School -->
+            <!--------------------------------->
+            <div class="containerSchool" *ngIf="this.arrival.typeOfContract.name == this.stageLess3 || this.arrival.typeOfContract.name == this.stage3AndMore || this.arrival.typeOfContract.name == this.alternant">
+
+                <!-- Section School-->
+                <div class="sectionSchool">
+                    <label class="labelSchool" for="selectCompanySchool"> {{ 'arrival.inProgress.updateSchoolOrCompany.school' | translate }}</label> 
+                    <div class="containSchool">
+                        <select formControlName="school" class="selectSchool" id="selectSchool">
+                            <option class="optionSchool" *ngFor="let item of listSchool" >{{ item.name | titlecase }}</option> 
+                        </select>
+                    </div>
+                    
+                </div>
+
+            </div>
+
+            <!------------------------------>
+            <!-- Container list Company -->
+            <!------------------------------> 
+            <div class="containerCompany" *ngIf="this.arrival.typeOfContract.name == this.externe">
+
+                <!-- Section Company-->
+                <div class="sectionCompany">
+                    <label class="labelCompany" for="selectCompanySchool"> {{ 'arrival.inProgress.updateSchoolOrCompany.company' | translate }}</label>  
+                    <div class="containCompany">
+                        <select formControlName="company" class="selectCompany" id="selectCompany">
+                            <option class="optionCompany" *ngFor="let item of listCompany" >{{ item.name | titlecase }}</option>
+                        </select> 
+                    </div>
+                       
+                </div>
+                
+            </div>
+
+            <!-- Update button -->
+            <div class="update">
+                <button class="buttonUpdate" [disabled]="updateSchoolOrCompanyForm.invalid">
+                    {{ 'arrival.inProgress.updateArrival.updateArrival' | translate }}
+                </button>
+            </div>
+
+            <!-- Sucessfull -->
+            <div class="recordingCompleted" *ngIf="recordingCompleted">
+                <p class="confirm">{{ recordingCompleted }}</p>
+            </div>
+
+            <!-- Errors -->
+            <div class="errors" *ngIf="errorField">
+                <p class="error">{{ errorField }}</p>
+            </div>
+
+        </form>
+
+    </div>
+
+</div>

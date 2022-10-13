@@ -1,0 +1,127 @@
+<app-header></app-header>
+
+<div class="container-main">
+
+    <!-- Title -->
+    <div class="title">
+        <div class="space"></div>
+        <h1>{{ 'inProgress.title' | translate }}</h1>
+    </div>
+
+    <!-- Container -->
+    <div class="containerData">
+
+        <!----------------------------->
+        <!-- First Part -->
+        <!----------------------------->
+        <div class="firstPart">
+
+            <!-- Form -->
+            <div class="form" *ngIf="arrival">
+                
+                <!-- Component for update Employee Information -->
+                <app-update-employee  [arrival]="arrival" 
+                    *ngIf="openFieldEmployee" (sendRefreshArrival)="refreshArrival()">
+                </app-update-employee>
+
+                <!-- Component for update Arrival Information -->
+                <app-update-arrival  [arrival]="arrival" 
+                    *ngIf="openFieldArrival" (sendRefreshArrival)="refreshArrival()">
+                </app-update-arrival>
+
+                <!-- Component for update Order Information -->
+                <app-update-order [arrival]="arrival"
+                    *ngIf="openFieldOrder" (sendRefreshArrival)="refreshArrival()"> 
+                </app-update-order> 
+
+                <!-- Component for update Equipment Information -->
+                <app-update-equipment [arrival]="arrival" 
+                    *ngIf="openFieldEquipment" (sendRefreshArrival)="refreshArrival()">
+                </app-update-equipment> 
+
+                <!-- Component for update School or Company Information -->
+                <app-update-school-company [arrival]="arrival"
+                    *ngIf="openFieldSchoolAndCompany" (sendRefreshArrival)="refreshArrival()">
+                </app-update-school-company>
+
+                <!-- Component for update Rights -->
+                <app-update-right [arrival]="arrival" *ngIf="openFieldRight"
+                    (sendRefreshArrival)="refreshArrival()">
+                </app-update-right>
+
+                <!-- Component for FirstSection Rights -->
+                <app-first-section [arrival]="arrival" *ngIf="openFieldFirstSection"
+                    (sendRefreshArrival)="refreshArrival()">
+                </app-first-section>
+
+                <!-- Component for SecondSection Rights -->
+                <app-second-section [arrival]="arrival" *ngIf="openFieldSecondSection"
+                    (sendRefreshArrival)="refreshArrival()">
+                </app-second-section>
+
+                <!-- Component for ThirdSection Rights -->
+                <app-third-section [arrival]="arrival" *ngIf="openFieldThirdSection"
+                    (sendRefreshArrival)="refreshArrival()">
+                </app-third-section>
+
+                <!-- Component for FourthSection Rights -->
+                <app-fourth-section [arrival]="arrival" *ngIf="openFieldFourthSection"
+                    (sendRefreshArrival)="refreshArrival()">
+                </app-fourth-section>
+
+                <!-- Component for update Comments -->
+                <app-update-comment [arrival]="arrival" *ngIf="openFieldComment" 
+                    (sendRefreshArrival)="refreshArrival()">
+                </app-update-comment>
+
+
+                <!-- Message no action in progress -->
+                <div class="no_rights" 
+                    *ngIf="
+                    !openFieldArrival && 
+                    !openFieldEmployee && 
+                    !openFieldOrder && 
+                    !openFieldEquipment &&
+                    !openFieldSchoolAndCompany &&
+                    !openFieldRight &&
+                    !openFieldFirstSection && 
+                    !openFieldSecondSection && 
+                    !openFieldThirdSection && 
+                    !openFieldFourthSection &&
+                    !openFieldComment">
+                    <h2 class="messageNoActionInProgress">{{ 'arrival.inProgress.updateEmpty' | translate }}</h2>
+                </div>
+                
+                
+            </div>
+
+
+        </div>
+
+        <!----------------------------->
+        <!-- Second Part -->
+        <!----------------------------->
+        <div class="secondPart">
+
+            <!-- Component Id Card -->
+            <app-id-card [arrival]="arrival" 
+                (sendUpdateEmployeeToParent)="openUpdateEmployee($event)"
+                (sendUpdateArrivalToParent)="openUpdateArrival($event)"
+                (sendUpdateOrderToParent)="openUpdateOrder($event)"
+                (sendUpdateEquipmentToParent)="openUpdateEquipment($event)"
+                (sendUpdateSchoolOrCompanyToParent)="openUpdateSchoolAndCompany($event)"
+                (sendUpdateRightsToParent)="openUpdateRights($event)"
+                (sendUpdateCommentToParent)="openUpdateComment($event)"
+                (sendUpdateFirstSectionRightsToParent)="openUpdateFirstSectionRight($event)"
+                (sendUpdateSecondSectionRightsToParent)="openUpdateSecondSectionRight($event)"
+                (sendUpdateThirdSectionRightsToParent)="openUpdateThirdSectionRight($event)"
+                (sendUpdateFourthSectionRightsToParent)="openUpdateFourthSectionRight($event)"
+                >
+            </app-id-card>
+        </div>
+
+    </div>
+
+</div>
+
+

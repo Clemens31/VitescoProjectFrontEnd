@@ -1,0 +1,361 @@
+/* Container Main */
+.container-main {
+    background-color: white(75, 75, 70);
+    border: 1px black solid;
+    color: black; 
+    height: 100%;
+    width: 100%;
+    border-radius: 25px;
+    overflow-y: auto;
+    box-shadow: 10px 10px 5px black;
+}
+
+/* Section Title */
+.sectionTitle {
+    width: 100%;
+    height: 15%;
+    display: flex;
+}
+
+/* Div Img */
+.imgTitle {
+    width: 30%;
+    display: flex;
+}
+
+/* Img Account */
+.imgAccount {
+    width: 80px;
+    height: 80px;
+    margin: auto;
+}
+ 
+/* Title text */
+.title {
+    width: 70%;
+    margin: auto;
+    font-size: x-large;
+}
+
+/* All Text */
+.text {
+    font-size: large;
+    overflow: hidden;
+    text-overflow: ellipsis;
+}
+
+/* Bold title information */
+.info {
+    font-weight: bold;
+    margin-bottom: 0.5%;
+    padding-right: 0%;
+}
+
+/* **********************************  */
+/* ContainerData  */
+/* **********************************  */
+.containerData {
+    margin: 1%;
+    width: 98%;
+    height: 80%;
+}
+
+/* All HeadBand*/
+.headBand {
+    width: 100%;
+    height: 5%;
+    background-color: rgba(75, 75, 70);
+    opacity: 0.6;
+    color: white;
+    display: flex;
+    border: 1px solid black;
+}
+
+/* Edit Button */
+.buttonEdit {
+    border: none;
+}
+
+/* Edit icon */
+.edition {
+    background-color: rgba(75, 75, 70);
+    height: 100%;
+}
+
+/* All Titles */
+.titleEmployee, .titleArrival, .titleOrder, .titleEquipment, .titleCompanySchool, 
+.titleCostCenter, .titleRights, .titleComment, .titleAdmin {
+    margin: auto;
+    font-weight: 500;
+    font-size: x-large;
+}
+
+/* Litle Titles */
+.littleTitleRights {
+    margin: auto;
+    font-weight: 500;
+    font-size: large;
+}
+
+/* **********************************  */
+/* All elements  */
+/* **********************************  */
+
+/* All block Information */
+.informationEmployee, .informationArrival, .informationOrder, .informationEquipment, 
+.informationCompanySchool, .informationCostCenter, .informationRights, .informationComment,
+.informationAdmin {
+    width: 100%;
+    margin-top: 1%;
+}
+
+/* Container lign with two elements */
+.firstLignEmployee, .firstLignArrival, .secondLignArrival, .thirdLignArrival,
+.fourthLignArrival, .firstLignOrder, .firstLignEquipment, .firstLignCompanyOrSchool, 
+.secondLignCompanyOrSchool, .firstLignSectionRights, .secondLignSectionRights, 
+.thirdLignSectionRights, .firstLignSecondSectionRights, .secondLignSecondSectionRights,
+.firstLignThirdSectionRights, .secondLignThirdSectionRights, .thirdLignThirdSectionRights,
+.firstLignFourthSectionRights,  .secondLignFourthSectionRights, .thirdLignFourthSectionRights,
+.fourthLignFourthSectionRights, .fifthLignFourthSectionRights, 
+.sixthLignFourthSectionRights, .seventhLignFourthSectionRights,
+.FirstLignAdmin, .SecondLignAdmin {
+    display: flex;
+}
+
+/* Div with two elements */
+.nameEmployee, .firstNameEmployee, .badgeEmployee, .dateOfEntry, .releaseDate, .obms, .vtos,
+.costCenter, .responsible, .firstAccount, .officeAdress,
+.referenceUser, .tcAccess, .statut, .electronicKey, .idElectronicKey, .location, .recordingHours, 
+.hil, .space, .referenceHil, .accountStatus, .referenceAccountStatut, .vpn, .idVPN, 
+.platformSoft, .ims, .add, .numberTicket, .limas,
+.startOfOrderPeriod, .endOfOrderPeriod, .computerType, .typeOfMachine , .company, .school, 
+.company_expiry_date_prevention_plan, .school_expiry_date_prevention_plan, .dateCreation,
+.creator, .delete, .accept {
+    width: 50%;
+}
+
+.statut {
+    display: flex;
+}
+
+.listEquipmentsFor {
+    display: flex; 
+}
+
+.equipmentTxt, .attributed {
+    width: 50%;
+}
+
+/* Last Field */
+.lastField{
+    margin-bottom: 2%;
+}
+
+/* Space after Comment and Section Admin */
+.informationComment, .informationAdmin {
+    padding-bottom: 5%;
+}
+
+/* Button Delete */
+.buttonDelete {
+    border: 1px solid;
+    margin-bottom: 5%;
+    background-color: rgba(215, 0, 75); 
+    color: white;     
+    width: 100%;
+    height: 100%;
+}
+
+/* Button Accept */
+.buttonAccept {
+    border: 1px solid;
+    margin-bottom: 5%;
+    background-color: green;   
+    color: white; 
+    width: 100%;
+    height: 100%;
+}
+
+/* **********************************  */
+/* Rights  */
+/* **********************************  */
+
+/* LittleHeadBand */
+.littleHeadBand {
+    color: white;
+    width: 100%;
+    height: 3%;
+    opacity: 0.6;
+    background-color: rgba(75, 75, 70);
+    display: flex;
+    border: 1px solid black;
+}
+
+/* firstLittleHeadBand */
+.firstLittleHeadBand {
+    margin-top: 2%;
+}
+
+/* All LignSectionRights */
+.firstLignSectionRights, .secondLignSectionRights, .thirdLignSectionRights,
+.firstLignSecondSectionRights, .secondLignSecondSectionRights,
+.firstLignThirdSectionRights, .secondLignThirdSectionRights, .thirdLignThirdSectionRights,
+.firstLignFourthSectionRights, .secondLignFourthSectionRights, .thirdLignFourthSectionRights,
+.fourthLignFourthSectionRights, .fifthLignFourthSectionRights, 
+.sixthLignFourthSectionRights, .seventhLignFourthSectionRights {
+    display: flex;
+    width: 100%;
+}
+
+/* Two elements by lign in Rights Section */
+.tcAccess, .statut, .electronicKey, .idElectronicKey, .location,
+.hil, .space, .referenceHil, .accountStatus, .referenceAccountStatut, .vpn, .idVPN,
+.platformSoft, .ims, .add, .numberTicket, .limas {
+    width: 50%;
+}
+
+
+/* Left and Right Section */
+.leftSection, .rightSection {
+    width: 50%;
+}
+
+/* Add value in the same lign */
+.valueRight {
+    display: flex;
+}
+
+.right {
+    display: flex;
+}
+
+/* Space beetween Span and value Right */
+.containRight {
+    font-weight: initial;
+}
+
+/* **********************************  */
+/* Media Query Width  */
+/* **********************************  */
+
+@media (min-width: 1900px) {
+    .title {
+        font-size: xx-large;
+        width: 75%;
+    }
+    /* Img Account */
+    .imgAccount {
+        width: 100px;
+        height: 100px;
+        margin: auto;
+    }
+    /* Div Img */
+    .imgTitle {
+        width: 25%;
+    }
+    .text {
+        font-size: x-large;
+    }
+
+}
+
+@media (max-width: 1400px) {
+
+    /* Disabled all lign with two elements */
+    .firstLignEmployee, .secondLignEmployee, .firstLignArrival, .secondLignArrival, .thirdLignArrival,
+    .fourthLignArrival, .firstLignSectionRights, .secondLignSectionRights, .thirdLignSectionRights,
+    .firstLignSecondSectionRights, .secondLignSecondSectionRights, 
+    .firstLignThirdSectionRights, .secondLignThirdSectionRights, .thirdLignThirdSectionRights,
+    .firstLignFourthSectionRights, .secondLignFourthSectionRights, .thirdLignFourthSectionRights,
+    .fourthLignFourthSectionRights, .fifthLignFourthSectionRights, 
+    .sixthLignFourthSectionRights, .seventhLignFourthSectionRights,
+    .firstLignOrder, .firstLignEquipment, .firstLignCompanyOrSchool, .secondLignCompanyOrSchool, 
+    .FirstLignAdmin, .SecondLignAdmin {
+        display: block;
+    }
+
+    .nameEmployee, .firstNameEmployee, .badgeEmployee, .dateOfEntry, .releaseDate, .obms, .vtos,
+    .costCenter, .responsible, .firstAccount, .officeAdress, .location,
+    .referenceUser, .tcAccess, .statut, .electronicKey, .idElectronicKey, .location, .recordingHours, 
+    .hil, .space, .referenceHil, .accountStatus, .referenceAccountStatut, .vpn, .idVPN,
+    .platformSoft, .ims, .add, .numberTicket, .limas,
+    .startOfOrderPeriod, .endOfOrderPeriod, .computerType, .typeOfMachine, 
+    .company, .school, .company_expiry_date_prevention_plan, 
+    .school_expiry_date_prevention_plan, .delete, .accept {
+        width: 100%;
+        text-align: center;
+    }
+
+    /* Align Text when element in alone */
+    .genderEmployee, .placeOfActivity, .typeOfContract, .vpn, 
+    .order, .machineName, .listEquipments, .costCenter, .listRights, .listComments {
+        text-align: center;
+    } 
+
+    .statut {
+        display: block;
+        text-align: center;
+        justify-content: center;
+    }
+
+    .listEquipmentsFor {
+        display: block; 
+    }
+
+    .equipmentTxt, .attributed {
+        width: 100%;
+    }
+
+    .right {
+        display: flex;
+        justify-content: center;
+    }
+
+
+    .buttonDelete, .buttonAccept {
+        width: 40%;
+        padding-top: 2%;
+        padding-bottom: 2%;
+    }
+
+    /* Text */
+    .text {
+        margin-right: 0%;
+        padding-right: 0%;
+    }
+    
+    /* Section Admin */
+    .creator, .dateCreation {
+        width: 100%;
+        text-align: center;
+    }
+
+}
+
+@media (max-width: 1200px) {
+
+    /* Disable the image div */
+    .imgTitle {
+        display: none;
+    }
+
+    .title {
+        width: 100%;
+        text-align: center;   
+        margin-left: 10px;     
+        margin-right: 10px;     
+    }
+    
+}
+
+@media (max-width: 1100px) {
+
+    /* All Titles */
+    .titleEmployee, .titleArrival, .titleOrder, .titleEquipment, .titleCompanySchool, 
+    .titleCostCenter, .titleRights, .titleComment, .titleAdmin {
+        margin: auto;
+        font-weight: 500;
+        font-size: large;
+    }
+    
+}

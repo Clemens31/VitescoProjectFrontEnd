@@ -1,0 +1,67 @@
+<mat-sidenav-container>
+    <mat-sidenav mode="side" opened>
+
+        <!-- Home -->
+        <button mat-button class="menu-button" routerLink="/home">
+            <mat-icon class="icon">home</mat-icon>
+            <span>{{ 'globals.home' |translate }}</span>
+        </button>
+
+        <mat-divider class="divider" *ngIf="!isOnlyUser"></mat-divider>
+
+        <!-- Create Arrival -->
+        <button mat-button class="menu-button" routerLink="/arrival/create-arrival" *ngIf="isManagerSHD_SHD">
+            <mat-icon class="icon">sentiment_very_satisfied</mat-icon>
+            <span>{{ 'header.create' |translate }}</span>
+        </button>
+
+        <!-- In process or registration -->
+        <button mat-button class="menu-button" (click)="openCurrentArrivalsList()"
+        *ngIf="!isOnlyUser">
+            <mat-icon class="icon">transfer_within_a_station</mat-icon>
+            <span>{{ 'home.inprogress' |translate }}</span>
+        </button>
+
+        <!-- Departure -->
+        <button mat-button class="menu-button" (click)="openDeparturePage()" *ngIf="!isOnlyUser">
+            <mat-icon class="icon">sentiment_very_dissatisfied</mat-icon>
+            <span>{{ 'globals.departure' |translate }}</span>
+        </button>
+
+        <mat-divider class="divider" *ngIf="isAdmin"></mat-divider>
+
+        <!-- Administration -->
+        <button mat-button class="menu-button" routerLink="/role-management" *ngIf="isAdmin">
+            <mat-icon class="icon">stars</mat-icon>
+            <span>{{ 'header.admin' |translate }}</span>
+        </button>
+        <mat-divider class="divider"></mat-divider>
+
+        <!-- Profile -->
+        <button mat-button class="menu-button" (click)="openProfile()">
+            <mat-icon class="icon">account_circle</mat-icon>
+            <span>{{ 'globals.profile' |translate }}</span>
+        </button>
+
+        <!-- About Us -->
+        <button mat-button class="menu-button" (click)="openAboutUs()">
+            <mat-icon class="icon">people</mat-icon>
+            <span>{{ 'globals.about' |translate }}</span>
+        </button>
+
+        <!-- Support -->
+        <button mat-button class="menu-button" (click)="openSupport()">
+            <mat-icon class="icon">settings</mat-icon>
+            <span>{{ 'globals.support' |translate }}</span>
+        </button>
+
+        <mat-divider class="divider"></mat-divider>
+
+        <!-- Logout -->
+        <button mat-button class="menu-button" (click)="logout()">
+            <mat-icon class="icon">exit_to_app</mat-icon>
+            <span>{{ 'globals.logout' |translate }}</span>
+        </button>
+
+    </mat-sidenav>
+</mat-sidenav-container>

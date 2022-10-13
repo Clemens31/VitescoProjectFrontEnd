@@ -1,0 +1,85 @@
+<div class="container-main">
+    <div class="secondSection">
+
+        <!-- Title -->
+        <h1 class="title">{{ 'arrival.inProgress.updateRights.secondSection.title' | translate }}</h1>
+
+        <!-- Form -->
+        <form class="form" [formGroup]="updateSecondSectionRightsForm" (ngSubmit)="onSubmitForm()">
+
+            <!-- FirstLignSecondSectionRights TC Access  -->
+            <div class="firstLignSecondSectionRights">
+
+                <!-- Hil acces -->
+                <div class="hilAccess">
+
+                    <div class="sectionHilAccess">
+                        <label class="labelHilAccess info" for="inputHilAccess">{{ 'arrival.inProgress.updateRights.secondSection.hil' | translate }} :</label> 
+                        <p> {{ hilString }}</p>
+                    </div>
+
+                </div>
+
+                <!-- Statut -->
+                <div class="statut"> 
+
+                    <!-- Label Statut -->
+                    <div class="labelStatut">
+                        <label class="labelStatutHilAccess info" for="inputStatutHilAccess">{{ 'arrival.inProgress.updateRights.secondSection.statut' | translate }}</label> 
+                    </div>
+
+                    <!-- Select Statut -->
+                    <select class="selectStatut"  formControlName="statut" 
+                    class="input" id="inputStatutHilAccess" *ngIf="!statut">
+                        <option *ngFor="let item of optionListStatut" >{{ item | titlecase }}</option>
+                    </select>
+
+                    <!-- If Hil Access is NO -->
+                    <div *ngIf="statut">
+                        <p>{{ statut }}</p>
+                    </div>
+
+                </div>
+
+            </div>
+
+            <!-- Reference -->
+            <div class="reference"> 
+
+                <!-- Label Reference -->
+                <div class="labelReference">
+                    <label class="labelReference info" for="inputReference">{{ 'arrival.inProgress.updateRights.secondSection.reference' | translate }}</label> 
+                </div>
+
+                <!-- Select Statut -->
+                <input type="text" class="selectReference input" formControlName="reference" *ngIf="!statut">
+
+                <!-- If Hil Access is NO -->
+                <div *ngIf="statut">
+                    <p>{{ statut }}</p>
+                </div>
+
+            </div>
+
+            <!-- Update button -->
+            <div class="update" *ngIf="!statut">
+                <button class="buttonUpdate" [disabled]="updateSecondSectionRightsForm.invalid">
+                    {{ 'arrival.inProgress.updateRights.secondSection.update' | translate }}
+                </button>
+            </div>
+
+            <!-- Sucessfull -->
+            <div class="recordingCompleted" *ngIf="recordingCompleted">
+                <p class="confirm">{{ recordingCompleted }}</p>
+            </div>
+
+            <!-- Errors -->
+            <div class="errors" *ngIf="errorField">
+                <p class="error">{{ errorField }}</p>
+            </div>
+            
+
+        </form>
+
+    </div>
+</div>

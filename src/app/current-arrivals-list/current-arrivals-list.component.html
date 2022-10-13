@@ -1,0 +1,56 @@
+<div class="popup">
+
+    <!-- Close pop up-->
+    <div (click)="closePopup()" class="close-btn">&times;</div>
+
+    <!-- Title -->
+    <h1 class="title">{{ 'home.inprogress' | translate }} </h1>
+
+    <!-- Form -->
+    <div class="listResult">
+
+        <!----------------------------->
+        <!-- Array -->
+        <!----------------------------->
+        <div class="array" *ngIf="currentArrivalList && currentArrivalList.length > 0">
+
+            <!-- Table -->
+            <table class="containArray">
+
+                <!-- Header -->
+                <thead class="header">
+                    <th>{{ 'home.listArrivals.name' | translate }}</th>
+                    <th>{{ 'home.listArrivals.firstname' | translate }}</th>
+                    <th>{{ 'home.listArrivals.dateOfEntry' | translate }}</th>
+                    <th>{{ 'home.listArrivals.vtResponsible' | translate }}</th>
+                    <th>{{ 'home.listArrivals.createdBy' | translate }}</th>
+                    <th>{{ 'home.listArrivals.toConsult' |translate }}</th>
+                </thead>
+
+                <!-- Contain -->
+                <tbody class="contain field" *ngFor="let arrival of currentArrivalList">
+                    <td class="element">{{ arrival.employee.name }}</td>
+                    <td class="element">{{ arrival.employee.firstname }}</td>
+                    <td class="element">{{ arrival.dateOfEntry | date }}</td>
+                    <td class="element">{{ arrival.vtResponsible }}</td>
+                    <td class="element">{{ arrival.manager.name }} : {{ arrival.manager.badge }} </td>
+                    <td class="element">
+                        <img [src]="iconConsult" class="iconConsult" 
+                        (click)="openScreenCurrentArrival(arrival)">
+                    </td>
+                </tbody>
+
+            </table>
+            
+        </div>
+
+        <!-- If arrival is empty -->
+        <div class="empty" *ngIf="currentArrivalList == null || currentArrivalList.length == 0">
+            <h2 class="message">{{ 'home.listArrivals.empty' |translate }}</h2>
+        </div>
+
+
+    </div>
+
+
+</div>

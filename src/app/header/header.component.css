@@ -1,0 +1,252 @@
+/* ALL*/
+.header-container {
+    height: 6%;
+    width: 100%;
+    box-sizing: border-box;
+    display: flex;
+}
+
+/** All Hover */
+.containerIcon:hover, .home:hover, .admin:hover, .create:hover, .inprogress:hover, .departure:hover {
+    background-color: black;
+    opacity: 0.5;
+}
+
+/* **********************************  */
+/* Icon Menu */
+/* **********************************  */
+
+.containerIcon {
+    flex: 0.5;
+    text-align: center;
+    margin: auto;
+}
+
+.icon {
+    height: 50px;
+}
+
+/* **********************************  */
+/* Image Vitesco */
+/* **********************************  */
+
+/* Image */
+.containerImageVitesco {
+    flex: 0.5;
+}
+
+.image {
+    height: 100%;
+}
+
+
+/* **********************************  */
+/* Selection */
+/* **********************************  */
+
+/* Selection */
+.selection {
+    flex: 6;
+    height: 100%;
+    display: flex;
+    justify-content: right;
+    align-items: center;
+}
+
+/* Element Selection */
+.link {
+    height: 100%;
+    width: 15%;
+    margin-left: 1%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+}
+
+/* Remove decoration link */
+.btn_link, .btn_link:visited {
+    text-decoration: none;
+    font-size: large;
+    color: rgba(74, 73, 68);
+}
+
+a:hover {
+    cursor: pointer;
+}
+
+.btn_link:hover{
+    color: white;
+}
+
+
+/* **********************************  */
+/* Profile */
+/* **********************************  */
+
+/* Container profile */
+.containerProfile {
+    display: flex;
+    flex: 0.5;
+    margin: auto;
+}
+
+/* Icon Account */
+.iconProfile {
+    height: 50px;
+}
+
+
+/* **********************************  */
+/* Menu Left Opened */
+/* **********************************  */
+
+#sideBarMenu {
+    position: absolute; 
+    width: 15%;
+    height: 94%;
+    top: 6%; 
+    left: 0%;
+}
+
+/* **********************************  */
+/* Menu Right Opened */
+/* **********************************  */
+
+/* All ul */
+ul {
+    width: 95%;
+}
+
+/* ul in ul*/
+ul ul {
+    display: none; 
+    position: absolute; 
+    margin:0px; 
+    padding: 0px; 
+    border: 1px solid #B0B0B0;
+}
+
+/* ul level2 */
+ul.level2 {
+    left: 0px; 
+    top: 100%;;
+    width: 99%;
+}
+
+/* ul level3 */
+ul.level3 {
+    right: 100%; 
+    top: -1px;
+    width: 120%;
+}
+
+/* All li */
+li {
+    list-style-type: none; 
+    position: relative; 
+    padding: 5px; 
+    padding-right: -1px;
+    margin: 0px;
+    text-align: center;
+}
+
+/* All li hover */
+li:hover {
+    background-color: rgba(75, 75, 70);
+    opacity: 0.8;
+}
+
+li:hover ul.level2, li li:hover ul.level3 {
+    display: block
+}
+
+li.more {
+    background-position:right; 
+    background-repeat: no-repeat; 
+    border-bottom: 1px solid grey;
+}
+
+/* Icons Langs */
+.iconFR, .iconEN {
+    height: 30px;
+    width: 30px;
+    margin-left: 10px;
+}
+
+
+
+
+/* **********************************  */
+/* Media Query Width  */
+/* **********************************  */
+
+/* + 1500 px */
+@media screen and (min-width: 1900px) {
+    .btn_link, .btn_link:visited {
+        font-size: x-large;
+    }
+    /* Icon Account */
+    .iconProfile, .icon {
+        height: 75px;
+    }
+}
+
+
+/* - 1500 px */
+@media screen and (max-width: 1500px) {
+    #sideBarMenu {
+        width: 230px;
+    }
+    .link {
+        width: 20%;
+    }
+}
+
+/* - 1100 px */
+@media screen and (max-width: 1100px) {
+    .selection {
+        flex: 3;
+    }
+    .selection a {
+        display: none;
+    }
+    .home, .admin, .create, .inprogress, .departure{
+        pointer-events: none;
+    }
+
+    .containerProfile {
+        flex: 1;
+    }
+}
+
+/* - 600 px */
+@media screen and (max-width: 600px) {
+    #sideBarMenu {
+        width: 90%;
+    }
+}
+
+/* **********************************  */
+/* Media Query Height  */
+/* **********************************  */
+
+/* - 700 px */
+@media screen and (max-height: 700px) {
+    .header-container {
+        height: 50px;
+    }
+    
+}
+
+@media (max-height: 1000px) {
+    /* Icon Account */
+    .iconProfile, .icon {
+        height: 50px;
+    }
+}
+    
+
+
+
+

@@ -1,0 +1,386 @@
+/* All */
+.container-main {
+    width: 100%;
+    height: 94%;
+    overflow-x: auto;
+    overflow-y: auto;
+}
+
+/* **********************************  */
+/* Title  */
+/* **********************************  */
+
+/* Space before title */
+.space {
+    height: 40%;
+}
+
+/* Title */
+.title {
+    width: 100%;
+    height: 15%;
+    text-align: center;
+    color: rgba(222, 57, 114);
+}
+
+/* **********************************  */
+/* Contain  */
+/* **********************************  */
+
+/* Contain */
+.contain {
+    width: 100%;
+    height: 85%;
+}
+
+/* All input */
+.input {
+    border-radius: 20px;
+    padding-left: 10px;
+    padding-right: 5px;
+}
+
+/* Button Search and Configuration */
+.buttonConfiguration, .buttonPDF, .buttonCSV {
+    appearance: none;
+    margin-left: 5%;
+    height: 80%;
+    width: 100px;
+    background-color: #FAFBFC;
+    border: 1px solid rgba(27, 31, 35, 0.15);
+    border-radius: 6px;
+    box-shadow: rgba(27, 31, 35, 0.04) 0 1px 0, rgba(255, 255, 255, 0.25) 0 1px 0 inset;
+    box-sizing: border-box;
+    color: #24292E;
+    cursor: pointer;
+    display: inline-block;
+    font-family: -apple-system, system-ui, "Segoe UI", Helvetica, Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji";
+    font-size: 14px;
+    font-weight: 500;
+    line-height: 20px;
+    list-style: none;
+    position: relative;
+    transition: background-color 0.2s cubic-bezier(0.3, 0, 0.5, 1);
+    user-select: none;
+    -webkit-user-select: none;
+    touch-action: manipulation;
+    vertical-align: middle;
+    white-space: nowrap;
+    word-wrap: break-word;
+}
+
+/* Button Archive */
+.buttonConfiguration {
+    margin-left: 0%;
+    float: right;
+}
+
+/* Buttons with Hover */
+.buttonConfiguration:hover, .buttonPDF:hover, .buttonCSV:hover {
+background-color: #F3F4F6;
+transition-duration: 0.1s;
+}
+
+/* Buttons with active (click) */
+.buttonConfiguration:active, .buttonPDF:active, .buttonCSV:active {
+background-color: #EDEFF2;
+box-shadow: rgba(225, 228, 232, 0.2) 0 1px 0 inset;
+transition: none 0s;
+}
+
+/* **********************************  */
+/* Search Bar and Configuration  */
+/* **********************************  */
+.firstBar {
+    height: 10%;
+    width: 90%;
+    padding-left: 5%;
+    padding-right: 5%;
+    display: flex;
+    align-items: center;
+}
+
+/* **********************************  */
+/* Div Input Search */
+.searchBar {
+    width: 22%;
+    height: 50%;
+}
+
+/* Input Search */
+.inputSearch {
+    height: 80%;
+    width: 90%;
+    background: url("../../assets/images/vt_icon_rgb_300dpi_black_search.png") no-repeat;
+    background-size: 25px;
+    background-position: 95% center;
+}
+
+/* **********************************  */
+/* Div Search Button */
+.search {
+    width: 40%;
+    height: 50%;
+    display: flex;
+    align-items: center;
+}
+
+
+/* **********************************  */
+/* Div Configuration */
+.configuration {
+    width: 45%;
+    height: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: flex-end;
+}
+
+/* **********************************  */
+/* Array  */
+/* **********************************  */
+
+/* Div Array*/
+.array {
+    height: 70%;
+    width: 100%;
+}
+
+/* Container Array */
+.containArray {
+    margin-left: 5%;
+    margin-right: 5%;
+    width: 90%;
+    background-color: white;
+    border: 1px solid;
+    height: 100%;
+    overflow-y: auto;
+}
+
+
+/* Title Array */
+.titleArray {
+    height: 10%;
+    border-bottom: 1px solid black;   
+    background-color: rgba(75, 75, 70, 0.2);
+    font-weight: 500;
+    display: flex;
+    align-items: center;
+}
+
+.result { 
+    height: 8%;
+    display: flex;
+    align-items: center;
+}
+
+.field:hover {
+    opacity: 0.5;
+}
+
+/* Name */
+.name, .nameEmployee {
+    width: 16%;
+    text-align: center;
+}
+
+/* SHD/SHF */
+.shd-shf {
+    text-align: center;
+    width: 9%;
+}
+
+/* Badge */
+.badge, .idBadge{
+    text-align: center;
+    width: 8%;
+}
+
+/* Rh */
+.rh {
+    text-align: center;
+    width: 7%;
+}
+
+/* IT/FM */
+.it-fm {
+    text-align: center;
+    width: 7%;
+}
+
+/* Surface */
+.surface {
+    text-align: center;
+    width: 8%;
+}
+
+/* Order */
+.order {
+    text-align: center;
+    width: 8%;
+}
+
+/* MIL */
+.mil {
+    text-align: center;
+    width: 5%;
+}
+
+/* Assistant */
+.assistant {
+    text-align: center;
+    width: 9%;
+}
+
+/* Admin */
+.admin {
+    text-align: center;
+    width: 5%;
+}
+
+/* Icon in red when hover for Consult Icon */
+.iconEdit:hover {
+    content: url(../../assets/images/vt_icon_rgb_72dpi_vt_brand_red_edit.png);
+}
+
+/* Icon in red when hover for Consult Icon */
+.iconDelete:hover {
+    content: url(../../assets/images/vt_icon_rgb_72dpi_vt_brand_red_delete.png);
+}
+
+/* Edit */
+.edit {
+    text-align: center;
+    width: 6%;
+}
+
+/* Delete */
+.delete {
+    text-align: center;
+    width: 6%;
+}
+
+.iconSearch, .imgValid, .iconEdit, .iconDelete {
+    height: 25px;
+    width: 25px;
+}
+
+
+/* **********************************  */
+/* Exports  */
+/* **********************************  */
+
+/* Container Exports */
+.exports {
+    height: 5%;
+    width: 90%;
+    display: flex;
+    margin-left: 5%;
+    padding-bottom: 10px;
+}
+/* Container Buttons */
+.exportButtons {
+    align-items: center;
+    width: 40%;
+    height: 100%;
+    display: flex;
+}
+/* Container each buttons*/
+.pdf, .csv {
+    width: 30%;
+    height: 100%;
+}
+.buttonPDF, .buttonCSV, .showAnswer {
+    margin-top: 10px;
+    height: 100%;
+}
+
+/* Section Answer */
+.answer {
+    width: 70%;
+}
+
+.showAnswer {
+    float: right;
+    color: white;
+    padding-left: 5%;
+    padding-right: 5%;
+    margin-right: 5%;
+    text-align: center;
+    border-radius: 5px;
+    padding-top: 10px;
+}
+
+.confirm {
+    background-color: green;
+}
+
+.danger {
+    background-color: red;
+}
+
+
+/* **********************************  */
+/* Media Query Height */
+/* **********************************  */
+
+/* < 800px */
+@media (max-height: 800px) {
+    /* Div Title */
+    .title {
+        height: 100px;
+    }
+    /* Div Input Search */
+    .firstBar {
+        height: 80px;
+    }
+    .array {
+        height: 500px;
+    }
+    .exports {
+        padding-bottom: 5%;
+    }
+    
+}
+
+
+/* < 1100px */
+@media (max-width: 1100px) {
+    .array {
+        width: 1050px;
+    }
+    /* First Bar */
+    .firstBar {
+        width: 950px;
+        margin-left: 50px;
+        padding-left: 0%;
+        padding-right: 0%;
+    }
+    .searchBar {
+        width: 250px;
+        margin: 0%;
+        padding: 0%;
+    }
+
+    /* Bottom bar */
+    .exports {
+        width: 950px;
+        margin-left: 50px;
+    }
+    .exportButtons {
+        width: 500px;
+    }
+    .inputSearch, .buttonConfiguration, .csv {
+        width: 200px;
+    }
+    .pdf {
+        width: 250px;
+    }
+    .answer {
+        width: 450px;
+    }  
+    /* Button Configuration, PDF, CSV */
+    .buttonConfiguration, .buttonPDF, .buttonCSV{
+        width: 100px;
+    }
+}

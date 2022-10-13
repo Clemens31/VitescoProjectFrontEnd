@@ -1,0 +1,597 @@
+<app-header></app-header>
+<div class="container-main">
+
+    <!-- Title -->
+    <div class="title">
+        <div class="space"></div>
+        <h1>{{ 'arrival.createEmployee.title' | translate }}</h1>
+    </div>
+
+    <!-- Form -->
+    <form class="form" [formGroup]="createEmployeeForm" (ngSubmit)="onSubmitForm()">
+
+        <!----------------------------->
+        <!-- First Part -->
+        <!----------------------------->
+        <div class="firstPart">
+
+            <!--------------------->
+            <!-- Container name  -->
+            <!--------------------->
+            <div class="containerName">
+                
+                <!-- Section name -->
+                <div class="sectionName">
+                    <label class="labelName" for="inputName"> {{ 'arrival.createEmployee.name' | translate }} <span>  *</span> </label> 
+                    <div class="containInputName">
+                        <input formControlName="name" id="inputName" type="text" class="inputName input" >
+                    </div>
+                </div>
+
+            </div>
+
+            <!------------------------>
+            <!-- Container FirstName  -->
+            <!------------------------>
+            <div class="containerFirstName">
+                
+                <!-- Section FirstName -->
+                <div class="sectionFirstName">
+                    <label class="labelFirstName" for="inputFirstName"> {{ 'arrival.createEmployee.firstName' | translate }}<span>  *</span></label> 
+                    <div class="containFirstName">
+                        <input formControlName="firstName" id="inputFirstName" type="text" class="inputFirstName input" >
+                    </div>
+                </div>
+
+            </div>
+
+            <!-------------------------->
+            <!-- Container date Entry -->
+            <!-------------------------->
+            <div class="containerDateEntry">
+                
+                <!-- Section date Entry -->
+                <div class="sectionDateEntry">
+                    <label class="labelDateEntry" for="inputDateEntry"> {{ 'arrival.createEmployee.dateOfEntry' | translate }}<span>  *</span></label> 
+                    <div class="containDateEntry">
+                        <input formControlName="dateOfEntry" id="inputDateEntry" type="date" class="inputDateEntry input" >
+                    </div>
+                </div>
+            </div>
+
+            <!---------------------------->
+            <!-- Container release date -->
+            <!---------------------------->
+            <div class="containerReleaseDate">
+                
+                <!-- Section release date -->
+                <div class="sectionRealeaseDate">
+                    <label class="labelRealeaseDate" for="inputRealeaseDate"> {{ 'arrival.createEmployee.releaseDate' | translate }}</label> 
+                    <div class="containRealeaseDate">
+                        <input formControlName="releaseDate" id="inputRealeaseDate" type="date" class="inputRealeaseDate input" >
+                    </div>
+                </div>
+
+            </div>
+
+            <!--------------------------------->
+            <!-- Container Place of activity -->
+            <!--------------------------------->
+            <div class="containerPlaceOfActivity">
+
+                <!-- Section Place of activity --> 
+                <div class="sectionPlaceOfActivity">
+                    <label class="labelPlaceOfActivity" for="selectPlaceOfActivity"> {{ 'arrival.createEmployee.placeOfActivity' | translate }}<span>  *</span></label> 
+                    <select formControlName="placeOfActivity" class="selectPlaceOfActivity" 
+                        id="selectPlaceOfActivity" (change)="onEditFieldOfficeAdress($event)">
+                        <option class="optionPlaceOfActivity" *ngFor="let item of placeOfActivities">{{ item.name | titlecase }} </option>
+                    </select>
+                </div>
+
+            </div>
+
+            <!-------------------------------->
+            <!-- Container Type of contract -->
+            <!-------------------------------->
+            <div class="containerTypeOfContract">
+
+                <!-- Section Type of contract -->
+                <div class="sectionTypeOfContract">
+                    <label class="labelTypeOfContract" for="selectTypeOfContract"> {{ 'arrival.createEmployee.typeOfContract.typeOfContract' | translate }}<span>  *</span></label> 
+                    <select formControlName="typeOfContract" class="selectTypeOfContract" id="selectTypeOfContract" 
+                    (change)="onEditFieldTypeOfContract($event)">
+                        <option class="optionTypeOfContract" *ngFor="let item of typesOfContracts">{{ item.name | titlecase }}</option>
+                    </select>
+                </div>
+            </div>                    
+
+            <!----------------------->
+            <!-- OBMS --------------->
+            <!----------------------->
+            <div class="containerObms" *ngIf="opensFieldsWhenExternalIsSelected">
+                
+                <!-- Section obms -->
+                <div class="sectionObms">
+                    <label class="labelObms" for="inputObms"> {{ 'arrival.createEmployee.obms' | translate }}</label> 
+                    <div class="containInputObms">
+                        <input formControlName="obms" id="inputObms" type="text" class="inputObms input" >
+                    </div>
+                </div>
+
+            </div>
+
+            <!----------------------->
+            <!-- VTOS --------------->
+            <!----------------------->
+            <div class="containerVtos" *ngIf="opensFieldsWhenExternalIsSelected">
+                
+                <!-- Section ceos -->
+                <div class="sectionVtos">
+                    <label class="labelVtos" for="inputVtos"> {{ 'arrival.createEmployee.vtos' | translate }}</label>
+                    <div class="containInputVtos">
+                        <input formControlName="vtos" id="inputVtos" type="number" class="inputVtos input" >
+                    </div>
+                </div>
+
+            </div>
+
+            <!--------------------------->
+            <!-- N° order --------------->
+            <!--------------------------->
+            <div class="containerOrder" *ngIf="opensFieldsWhenExternalIsSelected">
+                
+                <!-- Section order -->
+                <div class="sectionOrder">
+                    <label class="labelOrder" for="inputOrder"> {{ 'arrival.createEmployee.order' | translate }}</label>
+                    <div class="containInputOrder">
+                        <input formControlName="order" id="inputOrder" type="text" class="inputOrder input" >
+                    </div>
+                </div>
+
+            </div>   
+
+            <!---------------------------------->
+            <!-- Container startOfOrderPeriod  -->
+            <!---------------------------------->
+            <div class="containerStartOfOrderPeriod" *ngIf="opensFieldsWhenExternalIsSelected">
+                
+                <!-- Section startOfOrderPeriod -->
+                <div class="sectionStartOfOrderPeriod">
+                    <label class="labelStartOfOrderPeriod" for="inputStartOfOrderPeriod"> {{ 'arrival.createEmployee.startOfOrderPeriod' | translate }}</label> 
+                    <div class="containDateEntry">
+                        <input formControlName="startOfOrderPeriod" id="inputStartOfOrderPeriod" type="date" class="inputStartOfOrderPeriod input" >
+                    </div>
+                </div>
+
+            </div>
+
+            <!---------------------------------->
+            <!-- Container endOfOrderPeriod -->
+            <!---------------------------------->
+            <div class="containerEndOfOrderPeriod" *ngIf="opensFieldsWhenExternalIsSelected">
+                
+                <!-- Section endOfOrderPeriod -->
+                <div class="sectionEndOfOrderPeriod">
+                    <label class="labelEndOfOrderPeriod" for="inputEndOfOrderPeriod"> {{ 'arrival.createEmployee.endOfOrderPeriod' | translate }}</label>                 
+                    <div class="containDateEntry">
+                        <input formControlName="endOfOrderPeriod" id="inputEndOfOrderPeriod" type="date" class="inputEndOfOrderPeriod input" >
+                    </div>
+                </div>
+
+            </div>
+        </div>
+
+        <!----------------------------->
+        <!-- Second Part -->
+        <!----------------------------->
+        <div class="secondPart">
+
+            <!--------------------------->
+            <!-- Container responsible -->
+            <!--------------------------->
+            <div class="containerResponsible" >
+                
+                <!-- Section responsible -->
+                <div class="sectionResponsible">
+                    <label class="labelResponsible" for="inputResponsible"> {{ 'arrival.createEmployee.responsible' | translate }}<span>  *</span></label> 
+                    <div class="containInputResponsible">
+                        <input formControlName="responsible" id="inputResponsible" type="text" class="inputResponsible input" >
+                    </div>
+                </div>
+
+            </div>
+
+            <!---------------------------->
+            <!-- Container CostCenter -->
+            <!---------------------------->
+            <div class="containerIdCostCenter">
+                
+                <!-- Section idCostCenter -->
+                <div class="sectionIdCostCenter">
+                    <label class="labelIdCostCenter" for="inputIdCostCenter"> {{ 'arrival.createEmployee.costCenter' | translate }}<span>  *</span></label> 
+                    <div class="containIdCostCenter">
+                        <input formControlName="costCenter" id="inputIdCostCenter" type="text" class="inputIdCostCenter input" >
+                    </div>
+                </div>
+
+            </div>
+
+            <!---------------------------->
+            <!-- Container firstAccount -->
+            <!---------------------------->
+            <div class="containerFirstAccount">
+
+                <!-- Section firstAccount-->
+                <div class="sectionFirstAccount">
+                    <label class="labelFirstAccount" for="selectFirstAccount"> {{ 'arrival.createEmployee.firstAccount' | translate }}<span>  *</span></label>  
+                    <select formControlName="firstAccount" class="selectFirstAccount" id="selectFirstAccount">
+                        <option class="optionFirstAccount" *ngFor="let item of optionFieldFirstAccount" >{{ item | titlecase }}</option> 
+                    </select>
+                </div>
+
+            </div>
+
+            <!------------------------------>
+            <!-- Container list Company -->
+            <!------------------------------> 
+            <div class="containerCompany" *ngIf="opensFieldsWhenExternalIsSelected">
+
+                <!-- Section Company-->
+                <div class="sectionCompany">
+                    <label class="labelCompany" for="selectCompanySchool"> {{ 'arrival.createEmployee.company' | translate }}<span>  *</span></label>  
+                    <select formControlName="company" class="selectCompany" id="selectCompany">
+                        <option class="optionCompany" *ngFor="let item of listCompany" >{{ item.name | titlecase }}</option>
+                    </select>    
+                </div>
+                
+            </div>
+
+            <!---------------------------------> 
+            <!-- Container list School -->
+            <!--------------------------------->
+            <div class="containerSchool" *ngIf="openFieldSchool">
+
+                <!-- Section School-->
+                <div class="sectionSchool">
+                    <label class="labelSchool" for="selectCompanySchool"> {{ 'arrival.createEmployee.school' | translate }}<span>  *</span></label> 
+                    <select formControlName="school" class="selectSchool" id="selectSchool">
+                        <option class="optionSchool" *ngFor="let item of listSchool" >{{ item.name | titlecase }}</option> 
+                    </select>
+                </div>
+
+            </div>
+
+            <!---------------------------->
+            <!-- Container officeAdress -->
+            <!---------------------------->
+            <div class="containerOfficeAdress" *ngIf="openFieldOfficeAdress">
+                
+                <!-- Section officeAdress -->
+                <div class="sectionOfficeAdress">
+                    <label class="labelOfficeAdress" for="textareaOfficeAdress"> {{ 'arrival.createEmployee.officeAdress' | translate }}</label>
+                    <div class="containTextareaOfficeAdress">
+                        <textarea formControlName="officeAdress" class="textareaOfficeAdress" id="textareaOfficeAdress" ></textarea>
+                    </div> 
+                </div>
+                
+            </div>
+
+            <!----------------------------->
+            <!-- Container needEquipment -->
+            <!-----------------------------> 
+            <div class="containerNeedEquipment">
+
+                <form class="formEquipment" [formGroup]="equipmentForm" (ngSubmit)="onSubmitEquipmentForm()">
+                    
+                    <!-- Section NeedEquipment-->
+                    <div class="sectionNeedEquipment" >
+                        <label class="labelNeedEquipment" for="selectNeedEquipment"> {{ 'arrival.createEmployee.equipment.needEquipment' | translate }}</label>  
+                        <select formControlName="equipment" class="selectNeedEquipment" id="selectNeedEquipment"  (change)="onEditFieldOtherEquipment($event)">
+                            <option *ngFor="let item of equipmentInitList" >{{ item.name | titlecase }}</option>
+                        </select>
+                        <button *ngIf="!openFieldOtherEquipment" class="addEquipment" >{{ 'globals.add' | translate }}</button>
+                    </div>
+
+                    <!-- Section Other Equipments-->
+                    <div class="sectionOtherEquipment" *ngIf="openFieldOtherEquipment">
+                        <!-- Other Equipment -->
+                        <label class="labelOtherEquipment" for="inputOtherEquipment"> {{ 'arrival.createEmployee.equipment.otherEquipment' | translate }}</label>
+                        <div class="containinputOtherEquipment"> 
+                            <input formControlName="otherEquipment" id="inputOtherEquipment" type="text" class="inputOtherEquipment input">
+                        </div>
+                        <button class="addOtherEquipment" >{{ 'globals.add' | translate }}</button>
+            
+                    </div>
+
+                    <!-- Section Result Equipments-->
+                    <div class="displayEquipments" id="displayEquipments">
+                        <div class="resultEquipment" *ngFor="let item of equipmentResultList; let i = index" >
+                            <div class="elementEquipment">
+                                {{ item }}
+                            </div>
+                            <div class="checkboxEquipment">
+                                <input type="checkbox" id="checkboxAttributed">
+                                <p class="checkboxAttributed" for="checkboxAttributed">{{ 'arrival.createEmployee.equipment.attributed' | translate }}</p>
+                            </div>
+                            <div class="containerIconDeleteEquipment" (click)="onDeleteEquipment(i)" >
+                                <img [src]="deletedIcon" *ngIf="equipmentResultList.length > 0" class="iconDeleteEquipment"  >
+                            </div>
+                        </div>
+                    </div>
+                </form>
+            </div>
+
+            <!----------------------------->
+            <!-- Container Comments -->
+            <!-----------------------------> 
+            <div class="containerComments">
+
+                <!-- Section Comments-->
+                <div class="sectionComments">
+                    <label class="labelComments" for="selectComments"> {{ 'arrival.createEmployee.comments' | translate }}</label>  
+                    <div class="containerTextareaComments">
+                        <textarea formControlName="comments" class="selectComments" id="selectComments" ></textarea>
+                    </div>
+                </div>                    
+            </div>
+
+            <!---------------------------->
+            <!-- Container computerType -->
+            <!----------------------------> 
+            <div class="containerComputerType">
+
+                <!-- Section computerType-->
+                <div class="sectionComputerType">
+                    <label class="labelComputerType" for="selectComputerType"> {{ 'arrival.createEmployee.computerType.computerType' | translate }}<span>  *</span></label>  
+                    <select formControlName="computerType" class="selectComputerType" id="selectComputerType">
+                        <option class="optionComputerType" *ngFor="let item of optionListComputerType" >{{ item.name | titlecase }}</option>
+                    </select>
+                </div>
+                
+            </div>
+
+            <!---------------------------->
+            <!-- Container ComputerModel -->
+            <!----------------------------> 
+            <div class="containerComputerModel">
+
+                <!-- Section ComputerModel-->
+                <div class="sectionComputerModel">
+                    <label class="labelComputerModel" for="selectComputerModel"> {{ 'arrival.createEmployee.computerModel' | translate }}<span>  *</span></label> 
+                    <select formControlName="computerModel" class="selectComputerModel" id="selectComputerModel">
+                        <option class="optionComputerModel" *ngFor="let item of optionListComputerModel" >{{ item.name | titlecase }}</option>
+                    </select>
+                </div>
+                
+            </div>
+
+        </div>
+
+        <!----------------------------->
+        <!-- Third Part -->
+        <!----------------------------->
+        <div class="thirdPart">
+
+            <!---------------------------->
+            <!-- Container Platform -->
+            <!----------------------------> 
+            <div class="containerPlatform">
+
+                <!-- Section Platform-->
+                <div class="sectionPlatform">
+                    <label class="labelPlatform" for="selectPlatform"> {{ 'arrival.createEmployee.platform.platform' | translate }}<span>  *</span></label>  
+                    <select formControlName="platform" class="selectPlatform" id="selectPlatform">
+                        <option class="optionPlatform" *ngFor="let item of optionListPlatform">{{ item.name | titlecase }}</option>
+                    </select>
+                </div>
+                
+            </div>
+
+            <!---------------------------->
+            <!-- Second Lign with two elements -->
+            <!----------------------------> 
+            <div class="secondLign">
+
+                <div class="containSecondLign">
+                    <!---------------------------->
+                    <!-- Container AccountStatus --->
+                    <!----------------------------> 
+                    <div class="containerAccountStatus">
+
+                        <!-- Section AccountStatus-->
+                        <div class="sectionAccountStatus">
+                            <label class="labelAccountStatus" for="selectAccountStatus"> {{ 'arrival.createEmployee.accountStatus.accountStatus' | translate }}</label> 
+                            <select formControlName="accountStatus" class="selectAccountStatus" id="selectAccountStatus">
+                                <option class="inputAccountStatus" *ngFor="let item of optionListAccountStatus" >{{ item | titlecase }}</option>
+                            </select>
+                        </div>
+                        
+                    </div>
+
+                    <!---------------------------->
+                    <!-- Container TcAcess -->
+                    <!----------------------------> 
+                    <div class="containerTcAcess">
+
+                        <!-- Section TcAcess-->
+                        <div class="sectionTcAcess">
+                            <label class="labelTcAcess" for="selectTcAcess"> {{ 'arrival.createEmployee.tcAccess.tcAccess' | translate }}<span>  *</span></label>  
+                            <select formControlName="tcAccess" class="selectTcAcess" id="selectTcAcess">
+                                <option class="inputTcAccess" *ngFor="let item of optionListTcAccess" >{{ item | titlecase }}</option>
+                            </select>
+                        </div>
+                    
+                    </div>
+                </div>
+
+                
+            </div>
+
+            <!---------------------------->
+            <!-- Third Lign with two elements -->
+            <!----------------------------> 
+            <div class="thirdLign">
+
+                <div class="containThirdLign">
+
+                    <!---------------------------->
+                    <!-- Container Test Laboratory --->
+                    <!----------------------------> 
+                    <div class="containerTestLaboratory">
+
+                        <!-- Section TestLaboratory-->
+                        <div class="sectionTestLaboratory">
+                            <label class="labelTestLaboratory" for="selectTestLaboratory"> {{ 'arrival.createEmployee.testLaboratory' | translate }}<span>  *</span> </label> 
+                            <select formControlName="hil" class="selectTestLaboratory" id="selectTestLaboratory">
+                                <option class="inputTestLaboratory" *ngFor="let item of optionListYesNo" >{{ item | titlecase }}</option>
+                            </select>
+                        </div>
+                        
+                    </div>
+
+                    <!---------------------------->
+                    <!-- Container Recording Hours -->
+                    <!----------------------------> 
+                    <div class="containerRecordingHours">
+
+                        <!-- Section Recording Hours-->
+                        <div class="sectionRecordingHours">
+                            <label class="labelRecordingHours" for="selectRecordingHours"> {{ 'arrival.createEmployee.recordingHours.recordingHours' | translate }}</label>  
+                            <select formControlName="recordingHours" class="selectRecordingHours" id="selectRecordingHours">
+                                <option class="inputRecordingHours" *ngFor="let item of optionListRecordingHours" >{{ item | titlecase }}</option>
+                            </select>
+                        </div>
+                    
+                    </div>
+                </div>
+
+                
+            </div>
+
+            <!---------------------------->
+            <!-- Container electronicKey -->
+            <!----------------------------> 
+            <div class="containerElectronicKey">
+
+                <!-- Section ElectronicKey-->
+                <div class="sectionElectronicKey">
+                    <label class="labelElectronicKey" for="selectElectronicKey"> {{ 'arrival.createEmployee.electronicKey.electronicKey' | translate }}</label> 
+                    <select formControlName="electronicKey" class="selectElectronicKey"
+                        id="selectElectronicKey" (change)="onEditFieldElectronicKeyBlue($event)">
+                        <option class="optionElectronicKey" *ngFor="let item of optionListElectronicKey" >{{ item | titlecase }}</option>
+                    </select> 
+                </div>
+                
+            </div>
+
+            <!---------------------------->
+            <!-- Container Location electronicKey -->
+            <!----------------------------> 
+            <div class="containerLocationElectronicKey">
+
+                <!-- Section Location ElectronicKey-->
+                <div class="sectionLocationElectronicKey">
+                    <label class="labelLocationElectronicKey" for="selectLocationElectronicKey"> {{ 'arrival.createEmployee.electronicKey.location' | translate }}</label> 
+                    <div class="containLocationElectronicKey">
+                        <input class="inputLocationElectronicKey input" formControlName="location" id="inputLocationElectronicKey" type="text">
+                    </div>
+                </div>
+                
+            </div>
+
+            <!---------------------------->
+            <!-- Container VPN Access Request -->
+            <!----------------------------> 
+            <div class="containerVpn" *ngIf="opensFieldsWhenExternalIsSelected || openFieldVpn">
+
+                <!-- Section VPN Access Request -->
+                <div class="sectionVpn">
+                    <label class="labelVpn" for="selectVpn"> {{ 'arrival.createEmployee.vpnAccessRequest' | translate }}</label> 
+                    <select formControlName="vpn" class="selectVpn" id="selectVpn">
+                        <option class="optionVPN" *ngFor="let item of optionListYesNo" >{{ item | titlecase }}</option>
+                    </select>
+                </div>
+                
+            </div>
+
+            <!---------------------------->
+            <!-- Container Rights -->
+            <!----------------------------> 
+            <div class="containerRights">
+                <label class="labelContainRights" for="selectlabelRights"> {{ 'arrival.createEmployee.rights.rights' | translate }}</label> 
+                    
+                <!-- Section Rights-->
+                <div class="sectionRights">
+                    
+                    <div class="firstLignRights">
+
+                        <!-- PVCS no exists -->
+                        <div class="pvcs">
+                            
+                        </div>
+                        
+                        <!-- Limas --> 
+                        <div class="limas">
+                            <input type="checkbox" id="limas" formControlName="limas" class="check" 
+                                (change)="onEditFieldReferenceUser($event)">
+                            <label class="labelRights" for="limas">{{ 'arrival.createEmployee.rights.limas' | translate }}</label>
+                        </div>
+                            
+                    </div>
+
+                    <div class="secondLignRights">
+
+                        <!-- Add -->
+                        <div class="add">
+                            <input type="checkbox" id="add" formControlName="add" class="check">
+                            <label class="labelRights" for="add">{{ 'arrival.createEmployee.rights.add' | translate }}</label>
+                        </div>
+                        
+                        <!-- IMS -->
+                        <div class="ims">
+                            <input type="checkbox" id="ims" formControlName="ims" class="check">
+                            <label class="labelRights" for="ims">{{ 'arrival.createEmployee.rights.ims' | translate }}</label> 
+                        </div>
+                            
+                    </div>
+
+                </div>
+                
+            </div>
+
+            <!----------------------------->
+            <!-- Container referenceUser -->
+            <!----------------------------->
+            <div class="containerReferenceUser" *ngIf="openFieldReferenceUser">
+                
+                <!-- Section ReferenceUser -->
+                <div class="sectionReferenceUser">
+                    <label class="labelInputReferenceUser" for="InputReferenceUser"> {{ 'arrival.createEmployee.referenceUser' | translate }}</label>
+                    <div class="containInputReferenceUser">
+                        <input formControlName="referenceUser" id="InputReferenceUser" type="text" class="InputReferenceUser input" >
+                    </div>
+                </div>
+
+            </div>
+
+            <!-- Sucessfull -->
+            <div class="recordingCompleted" *ngIf="recordingCompleted">
+                <p class="showAnswer confirm">{{ recordingCompleted }}</p>
+            </div>
+
+            <!-- Errors -->
+            <div class="errors" *ngIf="errorField">
+                <p>{{ errorField }}</p>
+            </div>
+
+            <!-- Send Button -->
+            <button class="sendButton" [disabled]="createEmployeeForm.invalid">
+                {{ 'globals.send' | translate }}
+            </button>
+            
+        </div>
+
+    </form>
+    
+
+</div>

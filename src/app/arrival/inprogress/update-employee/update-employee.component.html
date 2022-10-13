@@ -1,0 +1,73 @@
+<div class="container-main">
+
+    <div class="employee">
+
+        <!-- Title -->
+        <h1 class="title">{{ 'arrival.inProgress.updateEmployee.title' | translate }}</h1>
+
+        <!-- Form -->
+        <form class="form"  [formGroup]="updateEmployeeForm" (ngSubmit)="onSubmitForm()"> 
+
+            <!-- Name -->
+            <div class="employeeName">
+
+                <!-- Section name -->
+                <div class="sectionName">
+                    <label class="labelName" for="inputName"> {{ 'arrival.inProgress.updateEmployee.name' | translate }} <span>  *</span> </label> 
+                    <div class="containInputName">
+                        <input id="inputName" type="text" class="inputName input" 
+                        formControlName="name">
+                    </div>
+                </div>
+
+            </div>
+
+            <!-- Firstname -->
+            <div class="employeeFirstname">
+
+                <!-- Section Firstname -->
+                <div class="sectionFirstname">
+                    <label class="labelFirstname" for="inputFirstname"> {{ 'arrival.inProgress.updateEmployee.firstname' | translate }} <span>  *</span> </label> 
+                    <div class="containFirstname">
+                        <input  id="inputFirstname" type="text" class="inputFirstname input" 
+                        formControlName="firstname">
+                    </div>
+                </div>
+
+            </div>
+
+            <!-- Badge -->
+            <div class="employeeBadge">
+
+                <!-- Section badge -->
+                <div class="sectionBadge">
+                    <label class="labelBadge" for="inputBadge"> {{ 'arrival.inProgress.updateEmployee.badge' | translate }}</label> 
+                    <div class="containInputBadge">
+                        <input  id="inputBadge" type="text" class="inputBadge input"
+                        formControlName="badge">
+                    </div>
+                </div>
+
+            </div>
+
+            <!-- Update button -->
+            <div class="update">
+                <button class="buttonUpdate">
+                    {{ 'arrival.inProgress.updateEmployee.updateEmployee' | translate }}
+                </button>
+            </div>
+
+        </form>
+
+        <!-- Sucessfull -->
+        <div *ngIf="recordingCompleted">
+            <p class="showAnswer confirm">{{ recordingCompleted }}</p>
+        </div>
+
+        <!-- Errors -->
+        <div class="errors" *ngIf="errorField">
+            <p>{{ errorField }}</p>
+        </div>
+
+    </div>
+</div>

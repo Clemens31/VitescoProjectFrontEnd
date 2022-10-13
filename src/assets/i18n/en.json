@@ -1,0 +1,430 @@
+{
+    "globals": {
+        "titleApplication": "Arrival and Departure",
+        "welcome": "Welcome to the application",
+        "wel" : "Welcome",
+        "vitescoTechno": "Vitesco Technologies",
+        "departure": "Departure",
+        "arrival": "Arrival",
+        "registrationOf": "Registration of ",
+        "no": "No",
+        "yes": "Yes",
+        "idk": "I don't know",
+        "men": "Men",
+        "woman": "Woman",
+        "send": "Send",
+        "returnHome": "Back to main page",
+        "home": "Home",
+        "support": "Support",
+        "about": "About Us",
+        "developers": "Developers",
+        "profile": "My Profile",
+        "add": "Add",
+        "serverDown": "The server is down. Please contact the administrator",
+        "search": "Search",
+        "consult": "Consult",
+        "edit": "Edit",
+        "delete": "Delete",
+        "language": "Language",
+        "en": "English",
+        "fr": "French",
+        "logout": "Logout",
+        "error": {
+            "400": "Request Error",
+            "403": "You don't have the rights"
+        }
+    },
+    "signIn": {
+        "login": "Login",
+        "password": "Password",
+        "signIn" : "Sign In",
+        "connection": "Login Page",
+        "register": "If you are not registered, please click here on the link to register on the application",
+        "error" : {
+            "error400" : "Connexion error. The request is wrong",
+            "error403" : "Connexion error. The identifiants are incorrect or you're not registered on the application"
+        }
+    },
+    "registration": {
+        "registration": "Registration Page",
+        "auth": "Link to Authentication Page",
+        "registrationError400": "Registration error. The request is wrong",
+        "registrationError401": "Registration error. The password is wrong",
+        "registrationError404": "Registration error. User doesn't exists on the LDAP or the credentials are incorrect. Please enter it through the link below",
+        "registrationError409": "Registration error. The user is already registered on the application"
+    },
+    "header": {
+        "selectLanguage": "Select your language",
+        "admin": "Admin",
+        "create": "Create an arrival",
+        "RH": "RH",
+        "inprogress": "Arrivals in progress",
+        "departure": "Departure"
+    },
+    "home" : {
+        "tools": "Vitesco Technologies Tool",
+        "create": "Create an arrival",
+        "inprogress": "Arrivals in progress",
+        "administration": "Administration",
+        "needRights": "In order to interact with the application, you must request rights from the application administrator",
+        "listArrivals": {
+            "name": "Name",
+            "firstname": "Firstname",
+            "dateOfEntry": "Date of entry",
+            "vtResponsible": "Responsible",
+            "createdBy": "Created by",
+            "toConsult": "To consult",
+            "selected" : "Selected",
+            "empty": "No arrivals are being processed"
+        }
+    },
+    "arrival": {
+        "createEmployee": {
+            "title" : "Create a new employee",
+            "name": "Name employee",
+            "firstName": "Firstname employee",
+            "selectACategory": "Select a category",
+            "dateOfEntry": "Date of entry",
+            "releaseDate": "Release date",
+            "placeOfActivity": "Place of activity",
+            "typeOfContract": {
+                "typeOfContract" : "Type of Contract",
+                "external": "External",
+                "internship-3": "Internship (-3 Months)",
+                "internship+3": "Internship (3 Months or more)",
+                "cdd" : "Fixed-term contract or Special contract",
+                "permanentContract": "Permanent contract",
+                "impat": "Impat",
+                "apprentice":"Apprentice"
+            },
+            "obms": "N° OBMS",
+            "vtos": "N° VTOS",
+            "order": "N° order",
+            "startOfOrderPeriod": "Start of order period",
+            "endOfOrderPeriod": "End of order period",
+            "responsible": "VT Responsible",
+            "costCenter": "Cost center",
+            "firstAccount": "First account",
+            "company": "Company",
+            "school": "School",
+            "officeAdress": "Office adress",
+            "referenceUser": "Reference user (Duplication of access rights)",
+            "equipment": {
+                "needEquipment": "Need for nominative business equipment",
+                "otherEquipment": "Other equipment",
+                "equipment": "Equipment",
+                "attributed": "attributed"
+            },
+            "computerType" : {
+                "computerType": "Computer type"
+            },
+            "computerModel": "Computer model",
+            "machineName": "Machine Name",
+            "platform": {
+                "platform": "Platform"
+            },
+            "accountStatus" : {
+                "accountStatus" : "Account Status (Included Office 365)"
+            },
+            "tcAccess" : {
+                "tcAccess": "TC Access",
+                "confidentialLocal": "Confidential local"
+            },
+            "testLaboratory":"Access to the test laboratory Hil",
+            "electronicKey" : {
+                "electronicKey" : "Electronic key",
+                "mechanical": "Mechanical",
+                "blueElectronicKey": "Blue Electronic Key",
+                "badge": "Badge",
+                "location": "Key location"
+            },
+            "comments": "Comments",
+            "vpnAccessRequest": "VPN access request",
+            "recordingHours": {
+                "recordingHours" : "Recording Hours Access",
+                "todo": "To do",
+                "done": "Done"
+            },
+            "rights" : {
+                "rights": "Types of rights to give",
+                "limas": "LIMAS",
+                "add" : "ADD",
+                "ims": "IMS"
+            },
+            "startOfIncorrectField" : "- The field ",
+            "endOfIncorrectField" : " is incorrect"
+        },
+        "inProgress": {
+            "updateEmpty": "No editing action is in progress",
+            "updateEmployee": {
+                "title": "Update employee",
+                "name":"Name employee",
+                "firstname": "Firstname",
+                "badge": "Badge",
+                "updateEmployee": "Update"
+            },
+            "updateArrival": {
+                "title": "Update Arrival",
+                "dateOfEntry":"Date of entry",
+                "releaseDate":"Release date",
+                "placeOfActivity":"Place of activity",
+                "typeOfContract":"Type of Contract",
+                "obms": "N° OBMS",
+                "vtos":"N° VTOS",
+                "responsible": "VT Responsible",
+                "costCenter":"Cost center",
+                "firstAccount":"First account",
+                "officeAdress":"Office adress",
+                "updateArrival": "Update",
+                "popup": {
+                    "title": "Updating Arrival",
+                    "warning": "If you confirm your changes, you may need to update some data.",
+                    "todo": "Warning ! That following your latest changes, other information already saved will be erased. If you had data in the fields below, they will be deleted.",
+                    "question": "Are you sure your changes ?",
+                    "yes": "Yes",
+                    "no": "No"
+                }
+            },
+            "updateOrder":  {
+                "title": "Update Order",
+                "unchangeable": "You can't update this section, because the type of contract isn't External.",
+                "order": "N° order",
+                "startOfOrderPeriod":"Start of order period",
+                "endOfOrderPeriod":"End of order period",
+                "update": "Update"
+            },
+            "upateEquipment": {
+                "title": "Edit equipments",
+                "computerModel":"Computer model",
+                "computerType":"Computer type",
+                "nameComputer": "Name computer",
+                "listEquipments" : "List Equipements",
+                "equipment": "Equipment",
+                "addEquipment": "Ajouter un équipement",
+                "none": "No equipment is currently registered",
+                "selectACategory":"Select a category",
+                "yes": "Yes",
+                "no": "No",
+                "upateEquipment": "Update"
+            },
+            "updateSchoolOrCompany": {
+                "title": "Change company or school",
+                "school": "School",
+                "school_expiry_date":"School expiration date",
+                "company":"Company",
+                "company_expiry_date":"Company expiration date",
+                "none": "No modification is available with the Type of contract: CDI, CDD special contract or Expat"
+            },
+            "updateRights": {
+                "title": "Modify Rights",
+                "accountStatus": "Account Status",
+                "electronicKey":"Electronic key",
+                "electronicKeyID":"Electronic Key ID",
+                "vpn": "VPN",
+                "location":"Key location",
+                "tcAccess" :"TC Access",
+                "platform": "Platform",
+                "hil":"Hil access",
+                "recordingHours":"Recording Hours Access",
+                "ims": "IMS",
+                "add": "ADD",
+                "limas": "LIMAS",
+                "update": "Update",
+                "firstSection": {
+                    "title": "Update First Section Right",
+                    "tcAccess":"TC Access",
+                    "statut":"Statut",
+                    "electronicKey":"Electronic key",
+                    "identifiant":"ID",
+                    "location":"Location",
+                    "none":"No selected"               
+                },
+                "secondSection": {
+                    "title": "Update Second Section Right",
+                    "hil":"Hil access",
+                    "statut": "Statut",
+                    "reference":"Reference",
+                    "update": "Update"
+                }
+            },
+            "updateComment": {
+                "title": "Add a comment",
+                "comment": "Comment",
+                "update": "Ajouter"
+            },
+            "popUpClose": {
+                "title": "Closing the arrival",
+                "message": "Are you sure you want to close the arrival : ",
+                "yes": "Yes",
+                "no": "No",
+                "redirection": "You will be redirected in 5 seconds to the welcome screen"
+            },
+            "popUpDelete": {
+                "title": "Delete arrival",
+                "message":"Are you sure you want to delete the arrival ?",
+                "yes": "Yes",
+                "no": "No",
+                "redirection": "You will be redirected in 5 seconds to the welcome screen"
+            },
+            "error": {
+                "error404": "The arrival doesn't exists"
+            }
+        }
+    },
+    "roleManagement": {
+        "title": "Role Management",
+        "placeholderSearchBar": "Enter name or number badge",
+        "buttonSearch": "Search",
+        "buttonConfiguration": "Configuration",
+        "nameEmployee": "Name employee",
+        "idBadge": "Id Badge",
+        "SHD/SHF": "SHD/SHF",
+        "RH": "RH",
+        "Badge": "Badge",
+        "IT/FM": "IT/FM",
+        "surface": "Surface",
+        "order": "Order",
+        "mil": "MIL",
+        "assistant": "Assistant",
+        "admin": "Admin",
+        "editManager": {
+            "title": "Edit manager",
+            "shd": "SHD/SHF",
+            "badge": "Badge",
+            "rh": "RH",
+            "it": "IT/FM",
+            "surface": "Surface",
+            "order": "Order",
+            "mil": "MIL",
+            "assistant": "Assitant",
+            "admin": "Admin",
+            "warning": "Be careful, check only the checkbox where the role user has role management",
+            "adminSelectAllCheckbox": "If you select the admin role, all roles will automatically be selected",
+            "error": {
+                "404": "The manager doesn't exist"
+            }
+        },
+        "deleteManager": {
+            "title": "Delete a manager",
+            "question": "Are you sure to delete the manager : "
+        },
+        "returnMessage" : {
+            "managerEdit" : {
+                "managerHasBeenEdited": "The manager has been edited",
+                "managerHasNotBeenEdited": "The manager has not been edited"
+            },
+            "managerDelete": {
+                "managerHasBeenDeleted": "The manager has been deleted",
+                "managerHasNotBeenDeleted": "The manager has been not deleted"
+            }
+        }
+    },
+    "inProgress": {
+        "title": "Arrival in progress"
+    },
+    "idCard": {
+        "employee": {
+            "title": "Employee Information",
+            "name": "Name employee",
+            "firstname": "Firstname",
+            "badge": "Badge"
+        },
+        "arrival": {
+            "title": "Arrival Information",
+            "dateOfEntry": "Date of entry",
+            "releaseDate":"Release date",
+            "placeOfActivity": "Place of activity",
+            "typeOfContract" : "Type of Contract",
+            "obms": "N° OBMS",
+            "vtos": "N° VTOS",
+            "order": "N° order",
+            "startOfOrderPeriod": "Start of order period",
+            "endOfOrderPeriod": "End of order period",
+            "responsible": "VT Responsible",
+            "costCenter":"Cost center",
+            "firstAccount": "First account",
+            "officeAdress": "Office adress",
+            "platform": "Plateform",
+            "accountStatus":"Account Status",
+            "tcAccess": "TC Access",
+            "hil": "Hil access",
+            "electronicKey" : "Electronic key",
+            "identifiant": "ID",
+            "vpnAccessRequest": "VPN access request",
+            "recordingHours": "Recording Hours Access"
+        },
+        "order": {
+            "title": "Order Information",
+            "noneInfo": "You cannot update this section because the contract type is not External"
+        },
+        "equipment": {
+            "title": "Equipment Information",
+            "computerType": "Computer type",
+            "typeOfMachine": "Type of machine",
+            "machineName" :"Machine Name",
+            "equipments": "Liste d'équipements",
+            "equipment": "Equipment",
+            "attributed": "attributed"
+        },
+        "companySchool": {
+            "title": "Company/School Information",
+            "company":"Company",
+            "school": "School",
+            "company_expiry_date": "Company expiration date",
+            "school_expiry_date": "School expiration date",
+            "noneInfo": "You cannot update this section with the contract type: CDI, CDD special contract or Expat"
+        },
+        "rights": {
+            "title" :"Rights Informations",
+            "right" : "Right",
+            "referenceUser": "Reference user",
+            "firstSection": {
+                "title": "First Section Rigths",
+                "tcAccess":"TC Access",
+                "statut" : "Statut",
+                "recordingHours":"Recording Hours Access",
+                "electronicKey": "Clé éléctronique",
+                "identifiant": "ID",
+                "location": "Location"
+            },
+            "secondSection": {
+                "title": "Second Section Rigths",
+                "hil":"Hil access",
+                "statut" : "Statut",
+                "reference": "Reference"
+            },
+            "thirdSection": {
+                "title": "Third Section Rigths",
+                "accountStatus":"Account Status",
+                "vpnAccessRequest":"VPN",
+                "statut": "Statut",
+                "reference":"Reference",
+                "idVpn":"ID VPN"
+            },
+            "fourthSection": {
+                "title": "Fourth Section Rigths",
+                "platform": "Platform",
+                "statut": "Statut",
+                "ims": "IMS",
+                "add":"ADD",
+                "limas":"LIMAS",
+                "ticketNumber": "Ticket number",
+                "referenceUser":"Reference user",
+                "yes":"Yes",
+                "no": "No"
+            }
+        },
+        "comment": {
+            "title": "Comments Information",
+            "nonComment": "No comments exist for the moment"
+        },
+        "admin": {
+            "title": "Admin section",
+            "creator": "Creator",
+            "dateCreation": "Creation date",
+            "deleteArrival" : "Delete Arrival",
+            "acceptArrival" : "Closing the arrivée"
+        }
+    }
+      
+}

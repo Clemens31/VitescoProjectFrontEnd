@@ -1,0 +1,210 @@
+/* All */
+.container-main {
+    height: 100%;
+    width: 100%;
+}
+
+/* Equipment */
+.equipment {
+    height: 80%;
+    width: 80%;
+    margin-left: 10%;
+    padding-top: 10%;
+}
+
+/* Form */
+.form {
+    height: 80%;
+}
+
+/* All input */
+.input {
+    border-radius: 20px;
+    padding-left: 10px;
+    padding-right: 10px;
+}
+
+/* Title */
+.title {
+    width: 100%;
+    height: 20%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.red {
+    color: red;
+}
+
+/* Lign with One Element */
+.computerModel, .computerType, .nameComputer {
+    height: 10%;
+}
+
+/******************************* */
+/* Equipment */
+/******************************* */
+
+/* Section List Equipments */
+.listEquipments {
+    height: 50%;
+}
+
+/* Others section Equipment */
+.containerNeedEquipment {
+    height: 70%;
+    border: 1px solid black;
+    padding: 2.5%;
+}
+
+/* Section Need Equipment */
+.sectionNeedEquipment {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+
+/* Option list Equipment */
+.selectNeedEquipment {
+    width: 55%;
+}
+
+/*******************************************/
+/** Other Equipment */
+/*******************************************/
+
+/* Section Other Equipment */
+.sectionOtherEquipment {
+    padding-top: 2%;
+}
+
+/* Container Input Other Equipment */
+.containInputOtherEquipment {
+    display: flex;
+    justify-content: space-between;
+}
+
+/* Button addEquipment Equipment */
+.addEquipment, .addOtherEquipment {
+    width: 20%;
+    height: 10%;
+    background-color: rgba(240, 230, 19);
+    border: 1px solid;
+    text-align: center;
+    font-size: small;
+    cursor: default
+}
+
+/*******************************************/
+/** Display Equipment */
+/*******************************************/
+
+/* Section Display list result Equipment */
+.displayEquipments {
+    height: 50%;
+    margin-top: 2%;
+    border: black solid 1px;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    overflow-y: auto;
+} 
+
+.resultEquipment {
+    display: flex;
+    justify-content: space-between;
+}
+
+/** Section Result Equipment*/
+.elementEquipment {
+    margin-top: 1%;
+    margin-left: 2%;
+    width: 50%;
+}
+
+/* Checkbox result Equipment */
+.checkboxEquipment {
+    display: flex;
+}
+
+/* Align checkbox and text */
+.checkboxAttributed {
+    display: flex;
+    padding-left: 5px;
+    align-items: center;
+}
+
+/* Icon Delete */
+.iconDeleteEquipment {
+    height: 70%;
+    width: 70%;
+}
+
+/* Icon in red when hover */
+.iconDeleteEquipment:hover {
+    content: url(../../../../assets/images/vt_icon_rgb_72dpi_vt_brand_red_delete.png);
+}
+
+/*******************************************/
+/** Button Update */
+/*******************************************/
+
+/* Section Update */
+.update {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 20%;
+}
+
+/* Button Update */
+.buttonUpdate {
+    width: 50%;
+    height: 50%;
+    background-color: rgba(240, 230, 19);
+    border: 1px solid;
+}
+
+/** Section Result Equipment*/
+.recordingCompleted, .errors {
+    height: 10%;
+    color: white;
+    padding-top: 10px;
+    padding-bottom: 10%;
+}
+
+/* Valid */
+.confirm {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: green;
+    height: 50%;
+    height: 100%;
+}
+
+/* Error */
+.error {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: red;
+    height: 50%;
+    height: 100%;
+}
+
+
+/* **********************************  */
+/* Media Query Width  */
+/* **********************************  */
+
+@media (max-width: 1400px) {
+
+    /* Error and Confirm Message */
+    .error, .confirm {
+        padding-left: 5%;
+        padding-right: 5%;
+    }
+
+}

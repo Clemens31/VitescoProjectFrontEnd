@@ -1,0 +1,549 @@
+/* All */
+.container-main {
+    width: 100%;
+    height: 94%;
+}
+
+/* All input */
+.input {
+    border-radius: 20px;
+    padding-left: 10px;
+    padding-right: 10px;
+}
+
+/* Remove the border when selection */
+input:focus
+{
+    outline: none;
+}
+
+/* Asterisk */
+span {
+    color: red;
+    font-size: 120%;
+}
+
+/* disable Textarea resizing */
+#textareaOfficeAdress, .displayEquipments, .selectComments {
+    resize:none;  
+}
+
+/* **********************************  */
+/* Title  */
+/* **********************************  */
+
+/* Title */
+.title {
+    width: 100%;
+    height: 15%;
+    text-align: center;
+    color: rgba(222, 57, 114);
+}
+
+/* Space before title */
+.space {
+    height: 40%;
+}
+
+
+/* **********************************  */
+/* Form  */
+/* **********************************  */
+
+/* Form */
+.form {
+    display: flex;
+    width: 100%;
+    height: 85%;
+}
+
+/* **********************************  */
+/* allPart */
+/* **********************************  */
+.firstPart, .secondPart, .thirdPart {
+    width: 100%;
+}
+
+
+/* **********************************  */
+/* First */
+/* **********************************  */
+
+/* Container */
+.containerName, .containerFirstName, .containerDateEntry, .containerReleaseDate, 
+.containerPlaceOfActivity, .containerTypeOfContract, .containerObms, .containerVtos, .containerOrder,
+.containerStartOfOrderPeriod, .containerEndOfOrderPeriod {
+    width: 100%;
+    height: 7%;
+    padding-bottom: 0.5%;
+}
+
+/* Section */
+.sectionName, .sectionFirstName, .sectionDateEntry, .sectionRealeaseDate, .sectionPlaceOfActivity,
+.sectionTypeOfContract, .sectionObms, .sectionVtos, .sectionOrder, .sectionStartOfOrderPeriod, 
+.sectionEndOfOrderPeriod {
+    display: flex;
+    padding-left: 5%;
+    height: 100%;
+}
+
+/* Label */
+.labelName, .labelFirstName, .labelDateEntry, .labelRealeaseDate, .labelPlaceOfActivity, 
+.labelTypeOfContract, .labelObms, .labelVtos, .labelOrder, .labelStartOfOrderPeriod, .labelEndOfOrderPeriod {
+    width: 45%;
+    display: flex;
+    height: 50%;
+    align-items: center;
+}
+
+/* Size Container Input */
+.containInputName, .containFirstName, .containDateEntry, .containRealeaseDate, 
+.selectPlaceOfActivity, .selectTypeOfContract, .containInputObms, .containInputVtos,
+.containInputOrder, .containDateEntry, .containDateEntry {
+    width: 45%;
+    display: flex;
+    height: 50%;
+}
+
+/* Size Input */
+.inputName, .inputFirstName, .optionGender, .inputDateEntry, .inputRealeaseDate, 
+.optionPlaceOfActivity, .optionTypeOfContract, .inputObms, .inputVtos, .inputOrder,
+.inputStartOfOrderPeriod, .inputEndOfOrderPeriod {
+    width: 100%;
+}
+
+/* **********************************  */
+/* SecondPart */
+/* **********************************  */
+
+/* Container */
+.containerResponsible, .containerIdCostCenter, .containerFirstAccount,
+.containerCompany, .containerSchool, .containerOfficeAdress, .containerComments, 
+.containerComputerType, .containerComputerModel {
+    width: 100%;
+    height: 7%;
+    padding-bottom: 0.5%;
+}
+
+/* Section */
+.sectionResponsible, .sectionIdCostCenter, .sectionFirstAccount,
+.sectionCompany, .sectionSchool, .sectionOfficeAdress, .sectionComments,
+.sectionComputerType, .sectionComputerModel {
+    display: flex;
+    padding-left: 5%;
+    height: 100%;
+}
+
+
+/* Label */
+.labelResponsible, .labelIdCostCenter, .labelFirstAccount, .labelCompany,
+.labelSchool, .labelOfficeAdress, .labelComments, .labelComputerType, .labelComputerModel {
+    width: 45%;
+    display: flex;
+    height: 50%;
+    align-items: center;
+}
+
+/* Label Office Adress */
+.labelOfficeAdress, .labelComments {
+    width: 45%;
+    display: flex;
+    height: 80%;
+    align-items: center;
+}
+
+/* Size Container Input */
+.containInputResponsible, .containIdCostCenter, .selectFirstAccount, 
+.selectCompany, .selectSchool, .containTextareaOfficeAdress, .containerTextareaComments,
+.selectComputerType, .selectComputerModel {
+    width: 45%;
+    display: flex;
+    height: 50%;
+}
+
+.containTextareaOfficeAdress, .containerTextareaComments {
+    width: 45%;
+    height: 90%;
+}
+
+/* Size Input */
+.inputResponsible, .inputIdCostCenter, .optionFirstAccount, 
+.optionCompany, .optionSchool, .optionComputerType, .optionComputerModel {
+    width: 100%;
+}
+
+/* Textarea */
+.textareaOfficeAdress, .selectComments {
+    width: 100%;
+    height: 80%;
+    padding-left: 2%;
+    padding-right: 4%;
+}
+
+/*********************************/
+
+/* Container Need Equipment */
+.containerNeedEquipment {
+    width: 100%;
+    height: 25%;
+}
+
+/* Form Equipment */
+.formEquipment {
+    height: 100%;
+}
+
+.formArray {
+    height: 100%;
+    width: 100%;
+}
+
+/* Section Equipment first and second section */
+.sectionNeedEquipment, .sectionOtherEquipment {
+    padding-left: 5%;
+    height: 20%;
+    display: flex;
+}
+
+/* Space Beetween the first and second section */
+.sectionOtherEquipment {
+    padding-top: 2%;
+}
+
+/* Label Equipment first and second Section */
+.labelNeedEquipment, .labelOtherEquipment {
+    width: 45%;
+    display: flex;
+    align-items: center;
+}
+
+/* Select First Section and Container Field input*/
+.selectNeedEquipment, .containinputOtherEquipment {
+    width: 30%;
+}
+
+/* Input Other Equipment */
+.inputOtherEquipment {
+    width: 90%;
+    height: 70%;
+}
+
+/* Button Add First Section */
+.addEquipment, .addOtherEquipment {
+    width: 10%;
+    margin-left: 5%;
+}
+
+/* Div Result equiments*/
+.displayEquipments {
+    margin-top: 1%;
+    height: 100px;
+    width: 85%;
+    margin-left: 5%;
+    background-color: white;
+    border: 1px solid black;
+    overflow-y: auto;
+}
+
+/* Div ngFor with all elements */
+.resultEquipment {
+    display: flex;
+}
+
+/** Section Result Equipment*/
+.elementEquipment {
+    margin-top: 1%;
+    margin-left: 2%;
+    width: 65%;
+    display: inline-block;
+    overflow: hidden;
+    text-overflow: ellipsis;
+}
+
+/* Container checkbox */
+.checkboxEquipment {
+    width: 20%;
+    margin-top: 1%;
+    display: flex;
+}
+
+/* Container icon Delete Equipment */
+.containerIconDeleteEquipment {
+    width: 15%;
+    margin-top: 1%;
+}
+
+/* Space beetween checkbox and label */
+.checkboxAttributed {
+    margin-left: 5%;
+}
+
+/** Size space for Icon */
+.containerIconDeleteEquipment {
+    width: 10%;
+    display: inline-block;
+}
+
+/** Size Icon */
+.iconDeleteEquipment {
+    padding-left: 20%;
+    width: 40%;
+}
+/* Icon in red when hover */
+.iconDeleteEquipment:hover {
+    content: url(../../../assets/images/vt_icon_rgb_300dpi_vt_brand_red_symbol_wrong.png);
+}
+
+/* Space after textarea */
+.containerComments {
+    margin-top: 2%;
+}
+
+/***************************************/
+
+/* **********************************  */
+/* ThirdPart */
+/* **********************************  */
+
+/* Container */
+.containerPlatform, .containerElectronicKey, .containerLocationElectronicKey, .containerVpn, .containerReferenceUser {
+    width: 100%;
+    height: 7%;
+    padding-bottom: 0.5%;
+}
+
+/* Section */
+.sectionPlatform, .sectionElectronicKey, .sectionLocationElectronicKey, .sectionVpn, .sectionReferenceUser {
+    display: flex;
+    padding-left: 5%;
+    height: 100%;
+}
+
+/* Label */
+.labelPlatform, .labelElectronicKey, .labelLocationElectronicKey, .labelVpn, .labelInputReferenceUser {
+    width: 45%;
+    display: flex;
+    height: 50%;
+    align-items: center;
+}
+
+/* Size Container Input */
+.selectPlatform, .selectElectronicKey, .containLocationElectronicKey, .selectVpn, .containInputReferenceUser {
+    width: 45%;
+    display: flex;
+    height: 50%;
+}
+
+/* Size Input */
+.optionPlatform, .inputLocationElectronicKey, .InputReferenceUser {
+    width: 100%;
+}
+
+/* **********************************  */
+
+/* Container lign with two elements*/
+.secondLign, .thirdLign {
+    width: 100%;
+    height: 10%;
+    display: flex;
+    padding-bottom: 2%;
+}
+
+/* Second container for alignment */
+.containSecondLign, .containThirdLign {
+    width: 100%;
+    padding-left: 5%;
+    display: flex;
+}
+
+/* All containers */
+.containerAccountStatus, .containerTcAcess, .containerTestLaboratory,
+.containerRecordingHours {
+    width: 45%;
+    height: 100%;
+}
+
+/* All section */
+.sectionAccountStatus, .sectionTcAcess, 
+.sectionTestLaboratory, .sectionRecordingHours {
+    height: 100%; 
+}
+
+/* All elements in container (label, select or div) */ 
+.labelAccountStatus, .selectAccountStatus, .labelTcAcess, .selectTcAcess, .labelTestLaboratory, .selectTestLaboratory,
+.labelRecordingHours, .selectRecordingHours {
+    width: 80%;
+    height: 50%;
+    display: block;
+}
+
+/* All input */
+.inputAccountStatus, .inputTcAccess, .inputTestLaboratory, .inputRecordingHours {
+    width: 100%;
+}
+
+
+/*************************************/
+
+/* Container Rights */
+.containerRights {
+    width: 100%;
+    height: 7%;
+    padding-bottom: 2%;
+}
+
+/* Label Rights */
+.labelContainRights {
+    padding-left: 5%;
+    height: 30%;
+}
+
+/* Space beetween checkbox and label */
+.labelRights {
+    margin-left: 10px;
+}
+
+/* Section Rights */
+.sectionRights {
+    display: flex;
+    height: 70%;
+}
+
+/* First Lign */
+.firstLignRights {
+    padding-left: 5%;
+    width: 45%;
+}
+
+/* Second Lign */
+.secondLignRights {
+    width: 50%;
+}
+
+/* Section Recording Completed */
+.showAnswer {
+    float: right;
+    color: white;
+    padding-left: 5%;
+    padding-right: 5%;
+    margin-right: 10%;
+    padding-top: 10px;
+    padding-bottom: 10px;
+    background-color: green;
+}
+
+/** Section Result Equipment*/
+.errors {
+    float: right;
+    color: white;
+    padding-left: 5%;
+    padding-right: 5%;
+    margin-right: 10%;
+    padding-top: 10px;
+    padding-bottom: 10px;
+    background-color: red;
+}
+
+/* Button Send */
+.sendButton {
+    margin-left: 60%;
+    margin-top: 5%;
+    width: 30%;
+    height: 7%;
+    background-color: rgba(240, 230, 19);
+    border: 1px solid;
+    margin-bottom: 5%;
+}
+
+
+/* **********************************  */
+/* Media Query Height */
+/* **********************************  */
+
+
+
+@media (max-height: 1000px),(max-width: 1950px){
+            
+    /* Title */
+    .title {
+        height: 200px;
+    }
+    /* Form */
+    .form {
+        width: 90%;
+        display: block;
+    }  
+    /* All Part */
+    .firstPart, .secondPart, .thirdPart {
+        margin-left: 5%;
+        height: 1000px;
+    }
+    .resultEquipment {
+        height: 30%;
+    }
+    .containerIconDeleteEquipment {
+        margin-top: 0.5%;
+    }
+    /** Size Icon */
+    .iconDeleteEquipment {
+        width: 25px;
+    }
+    /* Space after textarea */
+    .containerComments {
+        margin-top: 3%;
+    }
+    /*********************
+    /* Third Part*/
+    /*********************
+
+    /* Contain All Ligns */
+    .containSecondLign, .containThirdLign {
+        display: block;
+    }
+    /* Container with two elements */
+    .containerAccountStatus, .containerTcAcess, .containerTestLaboratory,
+    .containerRecordingHours {
+        width: 100%;
+    }
+    /* All ligns */
+    .secondLign, .thirdLign {
+        height: 14%;
+        padding-bottom: 0%;
+    }
+    /* All containers */
+    .containerAccountStatus, .containerTcAcess, .containerTestLaboratory,
+    .containerRecordingHours, .pvcs, .limas, .add, .ims {
+        height: 50%;
+    }
+    .sectionAccountStatus, .sectionTcAcess, 
+    .sectionTestLaboratory, .sectionRecordingHours {
+        display: flex;
+        height: 100%;
+    }
+    .labelAccountStatus, .selectAccountStatus, .labelTcAcess, .selectTcAcess, .labelTestLaboratory, .selectTestLaboratory,
+    .labelRecordingHours, .selectRecordingHours { 
+        width: 45%;
+    }
+    /* All input */
+    .inputAccountStatus, .inputTcAccess, .inputTestLaboratory, .inputRecordingHours {
+        height: 100%;
+    }
+    /* Container Rights */
+    .containerRights {
+        display: flex; 
+        padding-left: 5%;
+        width: 100%;
+    } 
+    /* Label Rights */
+    .labelContainRights{
+        width: 43%;
+        padding-left: 0%;
+    }
+    /* Section Rights */
+    .sectionRights {
+        width: 45%;
+    }
+    .firstLignRights {
+        padding-left: 0%;
+    }
+}

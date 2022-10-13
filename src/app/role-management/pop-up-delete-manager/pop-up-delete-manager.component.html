@@ -1,0 +1,35 @@
+<div class="popup">
+
+    <!-- Close pop up-->
+    <div (click)="closePopup()" class="close-btn">&times;</div>
+
+    <!-- Logo -->
+    <div class="cercle">
+        <img [src]="imageLogo" class="logo">
+    </div>
+
+    <!-- Form -->
+    <div class="title">
+
+        <!-- Title -->
+        <h1>{{ 'roleManagement.deleteManager.title' | translate }}</h1>
+
+    </div>
+
+    <!-- Question -->
+    <div class="question">
+        <h3>{{ 'roleManagement.deleteManager.question' | translate }} {{manager.badge}}</h3>
+    </div>
+
+    <!-- Answer -->
+    <div class="answers">
+        <div class="sectionNo">
+            <button class="no" (click)="closePopup()">{{ 'globals.no' | translate }}</button>
+        </div>
+        <div class="sectionYes">
+            <button class="yes" (click)="deleteManager()">{{ 'globals.yes' | translate }}</button>
+        </div>
+    </div>
+
+</div>
+

@@ -1,0 +1,149 @@
+<app-header></app-header>
+
+<div class="container-main">
+
+    <!-- Title -->
+    <div class="title">
+        <div class="space"></div>
+        <h1>{{ 'roleManagement.title' | translate }}</h1>
+    </div>
+
+    <!-- Contain -->
+    <div class="contain">
+
+        <!----------------------------->
+        <!-- SearchBar -->
+        <!----------------------------->
+        <div class="firstBar">
+            <div class="searchBar">
+                <input class="inputSearch input" type="text" [(ngModel)]="searchManager"
+                    placeholder="{{ 'roleManagement.placeholderSearchBar' | translate }}">
+            </div>
+            <div class="search"></div>
+            <div class="configuration">
+                <button class="buttonConfiguration" (click)="openConfiguration()">{{ 'roleManagement.buttonConfiguration' | translate }}</button>
+            </div>
+        </div>
+
+        <!-- Menu Edit Manager -->
+        <div id="buttonEditManager" *ngIf="displayFormEditManager">
+            <app-pop-up-edit-manager [manager]="currentManager"
+            (sendPopupClose)="closePopupEditManager()" 
+            (sendPopupManagerEdited)="returnMessageIfManagerIsEdited($event)">
+            </app-pop-up-edit-manager>
+        </div> 
+
+        <!-- Menu Delete Manager -->
+        <div id="buttonDeleteManager" *ngIf="displayFormDeleteManager">
+            <app-pop-up-delete-manager [manager]="currentManager" 
+                (sendPopupClose)="closePopupDeleteManager()"
+                (sendPopupManagerDeleted)="returnMessageIfManagerIsDeleted($event)">
+            </app-pop-up-delete-manager>
+        </div>
+
+        <!----------------------------->
+        <!-- Array -->
+        <!----------------------------->
+        <div class="array">
+            <table class="containArray">
+                <thead class="titleArray">
+                    <!-- Title Array -->
+                    <th class="nameEmployee">{{ 'roleManagement.nameEmployee' | translate }}</th>
+                    <th class="idBadge">{{ 'roleManagement.idBadge' | translate }}</th>
+                    <th class="shd-shf">{{ 'roleManagement.SHD/SHF' | translate }}</th>
+                    <th class="badge">{{ 'roleManagement.Badge' | translate }}</th>
+                    <th class="rh">{{ 'roleManagement.RH' | translate }}</th>
+                    <th class="it-fm">{{ 'roleManagement.IT/FM' | translate }}</th>
+                    <th class="surface">{{ 'roleManagement.surface' | translate }}</th>
+                    <th class="order">{{ 'roleManagement.order' | translate }}</th>
+                    <th class="mil">{{ 'roleManagement.mil' | translate }}</th>
+                    <th class="assistant">{{ 'roleManagement.assistant' | translate }}</th>
+                    <th class="admin">{{ 'roleManagement.admin' | translate }}</th>
+                    <th class="edit">{{ 'globals.edit' | translate }}</th>
+                    <th class="delete">{{ 'globals.delete' | translate }}</th> 
+                </thead>
+
+                <!-- Contain Informations Array -->
+                <tbody class="result field" *ngFor="let manager of managerList | filter:searchManager" >
+                        
+                    <td class="name">{{manager.name}}</td>
+                    <td class="badge">{{manager.badge}}</td>
+
+                    <!-- SHD/SHF -->
+                    <td class="shd-shf"> 
+                        <img class="imgValid" *ngIf="checkRoles(manager,rolesManager[0])" src="{{iconValid}}">
+                    </td>
+                    <!-- Badge -->
+                    <td class="badge"> 
+                        <img class="imgValid" *ngIf="checkRoles(manager,rolesManager[1])" src="{{iconValid}}">
+                    </td>
+                    <!-- RH -->
+                    <td class="rh"> 
+                        <img class="imgValid" *ngIf="checkRoles(manager,rolesManager[2])" src="{{iconValid}}" >
+                    </td>
+                    <!-- IT/FM -->
+                    <td class="it-fm"> 
+                        <img class="imgValid" *ngIf="checkRoles(manager,rolesManager[3])" src="{{iconValid}}" >
+                    </td>
+                    <!-- Surface -->
+                    <td class="surface"> 
+                        <img class="imgValid" *ngIf="checkRoles(manager,rolesManager[4])" src="{{iconValid}}" >
+                    </td>
+                    <!-- Order -->
+                    <td class="order">  
+                        <img class="imgValid" *ngIf="checkRoles(manager,rolesManager[5])" src="{{iconValid}}" >
+                    </td>
+                    <!-- MIL -->
+                    <td class="mil"> 
+                        <img class="imgValid" *ngIf="checkRoles(manager,rolesManager[6])" src="{{iconValid}}" >
+                    </td>
+                    <!-- Assistant -->
+                    <td class="assistant"> 
+                        <img class="imgValid" *ngIf="checkRoles(manager,rolesManager[7])" src="{{iconValid}}" >
+                    </td>
+                    <!-- Admin -->
+                    <td class="admin"> 
+                        <img class="imgValid" *ngIf="checkRoles(manager,rolesManager[8])" src="{{iconValid}}" >
+                    
+                    </td>
+                    <!-- Edit -->
+                    <td class="edit"> 
+                        <img [src]="iconEdit" class="iconEdit" (click)="openFormEditManager(manager)">
+                    </td>
+                    <!-- Delete -->
+                    <td class="delete"> 
+                        <img [src]="iconDelete" class="iconDelete" (click)="openFormDeleteManager(manager)">
+                    </td>
+                    
+                </tbody>
+            </table>
+        </div>
+
+        <!----------------------------->
+        <!-- exports -->
+        <!----------------------------->
+        <div class="exports">
+            <div class="exportButtons">
+                <div class="pdf"></div>
+                <div class="csv"></div>
+            </div>
+
+            <!-- Edited -->
+            <div class="answer" *ngIf="returnMessageEdited">
+                <p class="showAnswer confirm" *ngIf="managerEdited">{{ 'roleManagement.returnMessage.managerEdit.managerHasBeenEdited' | translate }}</p>
+                <p class="showAnswer danger" *ngIf="!managerEdited">{{ 'roleManagement.returnMessage.managerEdit.managerHasNotBeenEdited' | translate }}</p>
+            </div>
+
+            <!-- Deleted -->
+            <div class="answer" *ngIf="returnMessageDeleted">
+                <p class="showAnswer confirm" *ngIf="managerDeleted">{{ 'roleManagement.returnMessage.managerDelete.managerHasBeenDeleted' | translate }}</p>
+                <p class="showAnswer danger" *ngIf="!managerDeleted">{{ 'roleManagement.returnMessage.managerDelete.managerHasNotBeenDeleted' | translate }}</p>
+            </div>
+ 
+        </div>
+
+
+    </div>
+
+
+</div>

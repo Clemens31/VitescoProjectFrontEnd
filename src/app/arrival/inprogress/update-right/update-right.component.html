@@ -1,0 +1,238 @@
+<div class="container-main">
+    <div class="rights">
+
+        <!-- Title -->
+        <h1 class="title">{{ 'arrival.inProgress.updateRights.title' | translate }}</h1>
+
+        <!-- Form -->
+        <form class="form" [formGroup]="updateRightsForm" (ngSubmit)="onSubmitForm()">
+            
+            <!-- FirstLignRights VPN -->
+            <div class="firstLignRights" *ngIf="isExternal || isStageLess3Months">
+
+                <!-- VPN -->
+                <div class="vpn">
+
+                    <!-- Section VPN -->
+                    <div class="sectionVpn">
+                        <label class="labelVpn" for="inputVpn">{{ 'arrival.inProgress.updateRights.vpn' | translate }}</label> 
+                        <div class="containVpn">
+                            <select formControlName="vpn" class="selectVpn input" id="selectVpn">
+                                <option class="inputVpn input" *ngFor="let item of optionVpn" >{{ item | titlecase }}</option>
+                            </select>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- ID VPN -->
+                <div class="idVpn">
+
+                    <!-- Section Value VPN -->
+                    <div class="sectionIdVpn">
+                        <label class="labelIdVpn" for="inputIdVpn">{{ 'arrival.inProgress.updateRights.idVpn' | translate }}</label> 
+                        <div class="containIdVpn">
+                            <input  id="inputIdVpn" type="text" class="inputIdVpn input" formControlName="idVpn">
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+
+            <!-- SecondLignRights AccountStatus and TC Access -->
+            <div class="secondLignRights">
+
+                <!-- Account Status -->
+                <div class="accountStatus">
+
+                    <!-- Section Account Status -->
+                    <div class="sectionAccountStatus">
+                        <label class="labelAccountStatus" for="inputAccountStatus">{{ 'arrival.inProgress.updateRights.accountStatus' | translate }}</label> 
+                        <div class="containAccountStatus">
+                            <select formControlName="accountStatus" class="selectAccountStatus input" id="selectAccountStatus">
+                                <option class="optionAccountStatus input" *ngFor="let item of optionListAccountStatus" >{{ item | titlecase }}</option> 
+                            </select>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- TC Access -->
+                <div class="tcAccess">
+
+                    <!-- Section TC Access -->
+                    <div class="sectionTcAccess">
+                        <label class="labelTcAccess" for="inputTcAccess">{{ 'arrival.inProgress.updateRights.tcAccess' | translate }}  <span>  *</span></label> 
+                        <div class="containTcAccess">
+                            <select formControlName="tcAccess" class="selectTcAcess input" id="selectTcAcess">
+                                <option class="inputTcAccess input" *ngFor="let item of optionListTcAccess" >{{ item | titlecase }}</option>
+                            </select>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+
+            <!-- ThirdLignRights Electronic key -->
+            <div class="thirdLignRights">
+
+                <!-- Platform -->
+                <div class="platform">
+
+                    <!-- Section Plateform -->
+                    <div class="sectionPlatform">
+                        <label class="labelPlatform" for="inputPlatform">{{ 'arrival.inProgress.updateRights.platform' | translate }} <span>  *</span> </label> 
+                        <div>
+                            <select formControlName="platform" class="selectPlaceOfActivity input" id="selectPlaceOfActivity">
+                                <option class="optionPlatform" *ngFor="let item of optionListPlatform">{{ item.name | titlecase }} </option>
+                            </select>
+                            
+                        </div>
+                    </div>
+
+                </div>
+
+                <!-- Hil Access -->
+                <div class="hilAccess">
+
+                    <!-- Section Hil Access -->
+                    <div class="sectionHilAccess">
+                        <label class="labelHilAccess" for="inputHilAccess">{{ 'arrival.inProgress.updateRights.hil' | translate }} <span>  *</span> </label> 
+                        <div class="containHilAccess">
+                            <select formControlName="hil" class="selectHilAccess input" id="selectHilAccess">
+                                <option class="inputHilAccess" *ngFor="let item of optionListHil" >{{ item | titlecase }}</option>
+                            </select>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+
+            <!-- Recording Hours -->
+            <div class="recordingHours">
+
+                <!-- Section Recording Hours -->
+                <div class="sectionRecordingHours">
+                    <label class="labelRecordingHours" for="inputRecordingHours">{{ 'arrival.inProgress.updateRights.recordingHours' | translate }}</label> 
+                    <div class="containRecordingHours">
+                        <select formControlName="recordingHours" class="selectRecordingHours input" id="selectRecordingHours">
+                            <option class="inputRecordingHours" *ngFor="let item of optionListRecordingHours" >{{ item | titlecase }}</option>
+                        </select>
+                    </div>
+                </div>
+                
+            </div>
+
+            <!-- FourthLignRights Electronic key -->
+            <div class="fourthLignRights">
+
+                <!-- Electronic Key -->
+                <div class="electronicKey">
+
+                    <!-- Section Electronic Key -->
+                    <div class="sectionElectronicKey">
+                        <label class="labelElectronicKey" for="inputElectronicKey">{{ 'arrival.inProgress.updateRights.electronicKey' | translate }}</label> 
+                        <div class="containElectronicKey">
+                            <select formControlName="electronicKey" class="selectElectronicKey input" id="selectElectronicKey">
+                                <option class="inputElectronicKey" *ngFor="let item of optionElectronicKey" >{{ item }}</option>
+                            </select>
+                        </div>
+                    </div>
+
+                </div>
+
+                <!-- Location -->
+                <div class="location">
+
+                    <!-- Section Location -->
+                    <div class="sectionLocation">
+                        <label class="labelLocation" for="inputLocation">{{ 'arrival.inProgress.updateRights.location' | translate }}</label> 
+                        <div class="containLocation">
+                            <div class="containLocation">
+                                <input  id="inputLocation" type="text" class="inputLocation input" formControlName="location">
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+
+            <!-- fifthLignRights IMS ADD -->
+            <div class="fifthLignRights">
+
+                <!-- IMS -->
+                <div class="ims">
+
+                    <!-- Section IMS -->
+                    <div class="sectionIMS">
+                        <div class="containIMS">
+                            <input id="inputIMS" [checked]="ims && ims.isSelected" (change)="updateAttribute('ims')"
+                            type="checkbox" class="inputIMS input">
+                        </div>
+                        <label class="labelIMS" for="inputIMS">{{ 'arrival.inProgress.updateRights.ims' | translate }}</label> 
+                    </div>
+
+                </div>
+
+                <!-- Add -->
+                <div class="add">
+
+                    <!-- Section Add -->
+                    <div class="sectionAdd">
+                        <div class="containAdd">
+                            <input id="inputAdd" type="checkbox" class="inputAdd input" 
+                            [checked]="add && add.isSelected" (change)="updateAttribute('add')">
+                        </div>
+                        <label class="labelAdd" for="inputAdd">{{ 'arrival.inProgress.updateRights.add' | translate }}</label> 
+                    </div>
+
+                </div>
+
+            </div>
+
+            <!-- SixthLignRights Limas -->
+            <div class="sixthLignRights">
+
+                <!-- Limas -->
+                <div class="limas">
+
+                    <!-- Section Limas -->
+                    <div class="sectionLimas">
+                        <div class="containLimas">
+                            <input id="inputLimas" type="checkbox" class="inputALimas input" 
+                            [checked]="limas && limas.isSelected" (change)="updateAttribute('limas')">
+                        </div>
+                        <label class="labelLimas" for="inputLimas">{{ 'arrival.inProgress.updateRights.limas' | translate }}</label>  
+                    </div>
+
+                </div>
+
+            </div>
+
+
+            
+            <!-- Update button -->
+            <div class="update">
+                <button class="buttonUpdate" [disabled]="updateRightsForm.invalid">
+                    {{ 'arrival.inProgress.updateRights.update' | translate }}
+                </button>
+            </div>
+
+            <!-- Sucessfull -->
+            <div class="recordingCompleted" *ngIf="recordingCompleted">
+                <p class="confirm">{{ recordingCompleted }}</p>
+            </div>
+
+            <!-- Errors -->
+            <div class="errors" *ngIf="errorField">
+                <p class="error">{{ errorField }}</p>
+            </div>
+
+        </form>
+
+
+
+
+    </div>
+</div>
+
+
+    

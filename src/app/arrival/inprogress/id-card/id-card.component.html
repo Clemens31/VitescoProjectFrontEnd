@@ -1,0 +1,917 @@
+<div class="container-main" *ngIf="arrival">
+
+    <!-- Section Title -->
+    <div class="sectionTitle">
+        <div class="imgTitle">
+            <img [src]="imgTitle" class="imgAccount">
+        </div>
+        <div class="title">
+            <h2>{{ 'globals.registrationOf' | translate }} {{ arrival.employee.name }} {{ arrival.employee.firstname }}  </h2>
+        </div>
+    </div>
+
+    <!-- Open Pop up Confim Close Arrival -->
+    <div *ngIf="displayPopUpConfirmClose">
+        <app-pop-confirm-close [arrival]="arrival" (sendPopupClose)="closePopupCloseAndDelete()">
+        </app-pop-confirm-close>
+    </div>
+
+    <!-- Open Pop up Confirm Delete Arrival -->
+    <div *ngIf="displayPopUpConfirmDelete">
+        <app-pop-confirm-delete [arrival]="arrival" (sendPopupCancel)="closePopupCloseAndDelete()"> 
+        </app-pop-confirm-delete>
+    </div>
+
+    <!-- Container Data -->
+    <div class="containerData">
+
+        <!-- HeadBand Employee -->
+        <div class="headBand">
+            <p class="titleEmployee">{{ 'idCard.employee.title' | translate }}</p>
+            <button class="buttonEdit" (click)="openUpdateEmployee()">
+                <img [src]="edit" class="edition">
+            </button>
+            
+        </div>
+
+        <!-- All information about Employee -->
+        <div class="informationEmployee">
+
+            <!-- FirstLignEmployee -->
+            <div class="firstLignEmployee">
+
+                <!-- Name -->
+                <div class="nameEmployee">
+                    <span class="text info">{{ 'idCard.employee.name' | translate }} : </span>
+                    <span class="text">{{ arrival.employee.name | titlecase }}</span>
+                </div>
+                <!-- Firstname -->
+                <div class="firstNameEmployee">
+                    <span class="text info">{{ 'idCard.employee.firstname' | translate }} : </span>
+                    <span class="text">{{ arrival.employee.firstname  | titlecase }}</span>
+                </div>
+
+            </div>
+
+            <!-- SecondLignEmployee -->
+            <div class="secondLignEmployee">
+
+                <!-- Badge -->
+                <div class="badgeEmployee lastField">
+                    <span class="text info">{{ 'idCard.employee.badge' | translate }} : </span>
+                    <span class="text">{{ arrival.employee.badge! }}</span>
+                </div>
+            </div>
+
+        </div>
+
+        <!------------------------------------------------------------------------->
+        <!------------------------------------------------------------------------->
+        <!------------------------------------------------------------------------->
+
+        <!-- HeadBand Arrival -->
+        <div class="headBand">
+            <p class="titleArrival">{{ 'idCard.arrival.title' | translate }}</p>
+            <button class="buttonEdit" (click)="openUpdateArrival()">
+                <img [src]="edit" class="edition">
+            </button>
+        </div>
+
+        <!-- All informations about Arrival -->
+        <div class="informationArrival">
+
+            <!-- FirstLignArrival -->
+            <div class="firstLignArrival">
+
+                <!-- Date of entry -->
+                <div class="dateOfEntry">
+                    <span class="text info"> {{ 'idCard.arrival.dateOfEntry' | translate }} : </span>
+                    <span class="text">{{ arrival.dateOfEntry | date:'fullDate' }}</span>
+                </div>
+
+                <!-- Release date -->
+                <div class="releaseDate ">
+                    <span class="text info"> {{ 'idCard.arrival.releaseDate' | translate }} : </span>
+                    <span class="text">{{ arrival.releaseDate! | date:'fullDate' }}</span>
+                </div>
+
+            </div>
+
+             <!-- Place of activity -->
+             <div class="placeOfActivity">
+                <span class="text info">{{ 'idCard.arrival.placeOfActivity' | translate }} : </span>
+                <span class="text">{{ arrival.placeOfActivity.name | titlecase }}</span>
+            </div>
+
+            <!-- Type of Contract -->
+            <div class="typeOfContract">
+                <span class="text info">{{ 'idCard.arrival.typeOfContract' | translate }} : </span>
+                <span class="text">{{ arrival.typeOfContract.name | titlecase }}</span>
+            </div>
+
+            <!-- SecondLignArrival -->
+            <div class="secondLignArrival">
+
+                <!-- Obms -->
+                <div class="obms">
+                    <span class="text info">{{ 'idCard.arrival.obms' | translate }} : </span>
+                    <span class="text">{{ arrival.obms! | titlecase }}</span>
+                </div>
+                <!-- Vtos -->
+                <div class="vtos">
+                    <span class="text info">{{ 'idCard.arrival.vtos' | translate }} : </span>
+                    <span class="text">{{ arrival.vtos! }}</span>
+                </div>
+
+            </div>
+            
+            <!-- ThirdLignArrival -->
+            <div class="thirdLignArrival">
+
+                <!-- VTP Responsible -->
+                <div class="responsible">
+                    <span class="text info">{{ 'idCard.arrival.responsible' | translate }} : </span>
+                    <span class="text">{{ arrival.vtResponsible | titlecase }}</span>
+                </div>
+
+                <!-- Cost Center -->
+                <div class="costCenter">
+                    <span class="text info">{{ 'idCard.arrival.costCenter' | translate }} : </span>
+                    <span class="text">{{ arrival.costCenter | titlecase }}</span>
+                </div>
+
+            </div>
+
+            <!-- FourthLignArrival -->
+            <div class="fourthLignArrival">
+
+                <!-- First account -->
+                <div class="firstAccount">
+                    <span class="text info">{{ 'idCard.arrival.firstAccount' | translate }} : </span>
+                    <span class="text">{{ firstAccount ? firstAccount : null | titlecase }}</span>
+                </div>
+
+                <!-- Office adress --> 
+                <div class="officeAdress">
+                    <span class="text info">{{ 'idCard.arrival.officeAdress' | translate }} : </span>
+                    <span class="text">
+                        {{ (arrival.officeAdress ? 
+                            arrival.officeAdress : 
+                            null) 
+                            | titlecase 
+                        }}
+                    </span>
+                </div>
+
+            </div>
+
+        </div>
+
+        <!------------------------------------------------------------------------->
+        <!------------------------------------------------------------------------->
+        <!------------------------------------------------------------------------->
+
+        <!-- HeadBand Order -->
+        <div class="headBand">
+            <p class="titleOrder">{{ 'idCard.order.title' | translate }}</p>
+            <button class="buttonEdit" (click)="openUpdateOrder()">
+                <img [src]="edit" class="edition">
+            </button>
+        </div>
+
+
+        <!-- All informations about Order -->
+        <div class="informationOrder">
+
+            <!-- None informations -->
+            <div class="noneInfo" *ngIf="arrival.typeOfContract.name != externe">
+                {{ 'idCard.order.noneInfo' | translate }}
+            </div>
+
+            <!-- Order -->
+            <div class="order" *ngIf="arrival.typeOfContract.name == externe">
+                <span class="text info">{{ 'idCard.arrival.order' | translate }} : </span>
+                <span class="text">
+                    {{ 
+                        (arrival.order && arrival.order.order_number ? 
+                        arrival.order.order_number : 
+                        null )
+                        | titlecase
+                    }}</span>        
+            </div>
+
+            <!-- FirstLignOrder -->
+            <div class="firstLignOrder lastField" *ngIf="arrival.typeOfContract.name == externe">
+
+                <!-- Start of order period -->
+                <div class="startOfOrderPeriod">
+                    <span class="text info">{{ 'idCard.arrival.startOfOrderPeriod' | translate }} : </span>
+                    <span class="text" *ngIf="arrival.order">
+                        {{ (arrival.order.startOfOrderPeriod ? 
+                            arrival.order.startOfOrderPeriod : 
+                            null) 
+                            | date:'fullDate' 
+                        }}
+                    </span>
+                </div>
+
+                <!-- End of order period -->
+                <div class="endOfOrderPeriod">
+                    <span class="text info">{{ 'idCard.arrival.endOfOrderPeriod' | translate }} : </span>
+                    <span class="text" *ngIf="arrival.order">
+                        {{ (arrival.order.endOfOrderPeriod ? 
+                            arrival.order.endOfOrderPeriod : 
+                            null)
+                            | date:'fullDate'
+                        }}
+                    </span>
+                </div>
+
+            </div>
+
+        </div>
+
+        <!------------------------------------------------------------------------->
+        <!------------------------------------------------------------------------->
+        <!------------------------------------------------------------------------->
+
+        <!-- HeadBand Equipment -->
+        <div class="headBand">
+            <p class="titleEquipment">{{ 'idCard.equipment.title' | translate }}</p>
+            <button class="buttonEdit" (click)="openUpdateEquipment()">
+                <img [src]="edit" class="edition">
+            </button>
+        </div>
+
+        <!-- All informations about Equipment -->
+        <div class="informationEquipment lastField">
+
+            <!-- FirstLignEquipment -->
+            <div class="firstLignEquipment">
+
+                <!-- Computer Type -->
+                <div class="computerType">
+                    <span class="text info">{{ 'idCard.equipment.computerType' | translate }} : </span>
+                    <span class="text"> {{ arrival.equipmentNeed.computerType.name | titlecase }}</span>
+                </div>
+                <!-- Type of Machine -->
+                <div class="typeOfMachine">
+                    <span class="text info">{{ 'idCard.equipment.typeOfMachine' | translate }} : </span>
+                    <span class="text"> {{ arrival.equipmentNeed.computerModel.name | titlecase }}</span>
+                </div>
+
+            </div>
+
+            <!-- Machine Name -->
+            <div class="machineName">
+                <span class="text info">{{ 'idCard.equipment.machineName' | translate }} : </span>
+                <span class="text">
+                    {{ 
+                        (arrival.equipmentNeed && arrival.equipmentNeed.machineName ? 
+                        arrival.equipmentNeed.machineName : 
+                        null)
+                        | titlecase
+                    }}
+                </span>        
+            </div>
+
+            <!-- Equipments -->
+            <div class="listEquipments">
+                <p class="text info listEquipments">{{ 'idCard.equipment.equipments' | translate }} : </p>
+
+                <div class="listEquipments" *ngIf="arrival.equipmentNeed && arrival.equipmentNeed.equipmentList" >
+                    <div class="listEquipmentsFor" *ngFor="let equipment of arrival.equipmentNeed.equipmentList">
+
+                        <p class="equipmentTxt">
+                            <span class="text info"> {{ 'idCard.equipment.equipment' | translate }} : </span>
+                            <span class="text">{{ equipment.name | titlecase }}</span>
+                        </p>
+                        <p class="attributed">
+                            <span class="text info"> {{ 'idCard.equipment.attributed' | translate }} : </span>
+                            <span class="text">
+                                {{ equipment.attributed ? yes : no }}                           
+                            </span>
+                        </p>
+
+                    </div>
+                </div>
+                
+            </div>
+
+        </div>
+
+        <!------------------------------------------------------------------------->
+        <!------------------------------------------------------------------------->
+        <!------------------------------------------------------------------------->
+
+        <!-- HendBand CompanySchool -->
+        <div class="headBand">
+            <p class="titleCompanySchool">{{ 'idCard.companySchool.title' | translate }}</p>
+            <button class="buttonEdit" (click)="openUpdateSchoolOrCompany()">
+                <img [src]="edit" class="edition">
+            </button>
+        </div>
+        
+        <!-- All informations about CompanySchool -->
+        <div class="informationCompanySchool">
+
+            <!-- None informations -->
+            <div class="noneInfo" *ngIf="arrival.typeOfContract.name == cdi || arrival.typeOfContract.name.toLowerCase() == cdd || arrival.typeOfContract.name == expat">
+                {{ 'idCard.companySchool.noneInfo' | translate }}
+            </div>
+
+            <!-- FirstLignCompanyOrSchool -->
+            <div class="firstLignCompanyOrSchool">
+
+                <!-- Company -->
+                <div class="company" *ngIf="arrival.typeOfContract.name == externe">
+                    <span class="text info">{{ 'idCard.companySchool.company' | translate }} : </span>
+                    <span class="text">
+                        {{ (arrival.company && arrival.company.name ? 
+                            arrival.company.name : 
+                            null)
+                            | titlecase 
+                        }}</span>
+                    
+                </div>
+
+                <!-- School -->
+                <div class="school" *ngIf="this.arrival.typeOfContract.name == this.stageLess3 || this.arrival.typeOfContract.name == this.stage3AndMore || this.arrival.typeOfContract.name == this.alternant">
+                    <span class="text info">{{ 'idCard.companySchool.school' | translate }} : </span>
+                    <span class="text"> 
+                        {{ (arrival.school && arrival.school.name ? 
+                            arrival.school.name : 
+                            null)
+                            | titlecase 
+                        }}</span>
+                    
+                </div>
+
+            </div>
+
+            <!-- SecondLignCompanyOrSchool -->
+            <div class="secondLignCompanyOrSchool lastField">
+
+                <!-- expiry_date_prevention_plan Company -->
+                <div class="company_expiry_date_prevention_plan" *ngIf="arrival.typeOfContract.name == externe">
+                    <span class="text info">{{ 'idCard.companySchool.company_expiry_date' | translate }} : </span>
+                    <span class="text">
+                        {{ (arrival.company && arrival.company.expiry_date_prevention_plan ? 
+                            arrival.company.expiry_date_prevention_plan : 
+                            null) 
+                            | date:'fullDate'
+                        }}
+                    </span>
+                        
+                    
+                </div>
+
+                <!-- expiry_date_prevention_plan School -->
+                <div class="school_expiry_date_prevention_plan" *ngIf="this.arrival.typeOfContract.name == this.stageLess3 || this.arrival.typeOfContract.name == this.stage3AndMore || this.arrival.typeOfContract.name == this.alternant">
+                    <span class="text info">{{ 'idCard.companySchool.school_expiry_date' | translate }} : </span>
+                    <span class="text">
+                        {{ (arrival.school && arrival.school.expiry_date_prevention_plan ? 
+                            arrival.school.expiry_date_prevention_plan : 
+                            null) 
+                            | date:'fullDate'
+                        }}
+                    </span>
+                </div>
+
+            </div>
+
+        </div>
+
+        <!------------------------------------------------------------------------->
+        <!------------------------------------------------------------------------->
+        <!------------------------------------------------------------------------->
+
+        <!-- HeadBand Rights -->
+        <div class="headBand">
+
+            <!-- SHD Edit-->
+            <button class="buttonEdit"(click)="openUpdateRights()">
+                <img [src]="edit" class="edition">
+            </button>
+
+            <p class="titleRights">{{ 'idCard.rights.title' | translate }}</p>
+        </div>
+
+        <!-- First HeadBand -->
+        <div class="littleHeadBand firstLittleHeadBand">
+
+            <p class="littleTitleRights">{{ 'idCard.rights.firstSection.title' | translate }}</p>
+
+            <!-- Assistant Edit -->
+            <button class="buttonEdit" (click)="openFirstSectionRight()">
+                <img [src]="edit" class="edition">
+            </button>
+            
+        </div>
+
+        <!-- FirstLignSectionRights -->
+        <div class="firstLignSectionRights">
+
+            <!-- TcAccess -->
+            <div class="tcAccess">
+                <span class="text info">{{ 'idCard.rights.firstSection.tcAccess' | translate }} : </span>
+                <span class="text">
+                    {{ accessTC | titlecase }}
+                </span>
+            </div>
+
+            <!-- Statut tcAccess -->
+            <div class="statut">
+                <span class="text info">{{ 'idCard.rights.firstSection.statut' | translate }} : </span>
+                <span class="text">
+                    {{ (statutAccessTC ? statutAccessTC : null) | titlecase }}
+                </span>
+            </div>
+
+        </div>
+
+        <!-- Recording Hours -->
+        <div class="recordingHours">
+            <span class="text info">{{ 'idCard.rights.firstSection.recordingHours' | translate }} : </span>
+            <span class="text">
+                {{ (recordingHours ? recordingHours : null) | titlecase }}
+            </span>
+        </div>
+
+        <!-- SecondLignSectionRights -->
+        <div class="secondLignSectionRights">
+
+            <!-- ElectronicKey -->
+            <div class="electronicKey">
+                <span class="text info">{{ 'idCard.rights.firstSection.electronicKey' | translate }} : </span>
+                <span class="text">
+                    {{ (electronicKey ? electronicKey: null) | titlecase }}
+                </span>
+            </div>
+
+            <!-- ID ElectronicKey-->
+            <div class="idElectronicKey">
+                <span class="text info">{{ 'idCard.rights.firstSection.identifiant' | translate }} : </span>
+                <span class="text">
+                    {{ (arrival.electronicKey && arrival.electronicKey.identifiant ? 
+                        arrival.electronicKey.identifiant : 
+                        null) 
+                    }}
+                </span>
+            </div>
+                
+
+        </div>
+
+        <!-- ThirdLignSectionRights -->
+        <div class="thirdLignSectionRights">
+
+            <!-- Location -->
+            <div class="location">
+                <span class="text info">{{ 'idCard.rights.firstSection.location' | translate }} : </span>
+                <span class="text">
+                    {{ (arrival.electronicKey && arrival.electronicKey.location ? 
+                        arrival.electronicKey.location : 
+                        null
+                        ) 
+                    }}
+                </span>
+            </div>
+            
+            <!-- Statut tcAccess -->
+            <div class="statut lastField">
+                <span class="text info">{{ 'idCard.rights.firstSection.statut' | translate }} : </span>
+                <span class="text"> 
+                    {{ (statutElectronicKey ? statutElectronicKey: null) | titlecase }}
+                </span>
+            </div>
+                
+
+        </div>
+
+        
+
+        <!------------------------------------------------------------------------->
+
+        <!-- Second HeadBand -->
+        <div class="littleHeadBand">
+
+            <p class="littleTitleRights">{{ 'idCard.rights.secondSection.title' | translate }}</p>
+
+            <!-- Assistant Edit -->
+            <button class="buttonEdit" (click)="openSecondSectionRight()">
+                <img [src]="edit" class="edition">
+            </button>
+
+        </div>
+
+        <!-- FirstLignSectionRights -->
+        <div class="firstLignSecondSectionRights">
+
+            <!-- Hil -->
+            <div class="hil">
+                <span class="text info">{{ 'idCard.rights.secondSection.hil' | translate }} : </span>
+                <span class="text">{{ arrival.hil.hil | titlecase }}</span>
+            </div>
+
+            <!-- Statut Hil -->
+            <div class="statut">
+                <span class="text info">{{ 'idCard.rights.secondSection.statut' | translate }} : </span>
+                <span class="text">
+                    {{ (statutHil ? statutHil : null) | titlecase }}
+                </span>
+            </div>
+
+        </div>
+
+         <!-- SecondLignSectionRights -->
+         <div class="secondLignSecondSectionRights">
+
+            <!-- Space -->
+            <div class="space">
+            </div>
+
+            <!-- Reference -->
+            <div class="referenceHil lastField">
+                <span class="text info">{{ 'idCard.rights.secondSection.reference' | translate }} : </span>
+                <span class="text">
+                    {{ (arrival.hil && arrival.hil.reference ? 
+                        arrival.hil.reference : 
+                        null) 
+                        | titlecase 
+                    }}
+                </span>
+            </div>
+                
+
+        </div>
+
+
+
+        <!------------------------------------------------------------------------->
+        <!-- Third HeadBand -->
+        <div class="littleHeadBand">
+
+            <p class="littleTitleRights">{{ 'idCard.rights.thirdSection.title' | translate }}</p>
+
+            <!-- Assistant Edit -->
+            <button class="buttonEdit" (click)="openThirdSectionRight()">
+                <img [src]="edit" class="edition">
+            </button>
+
+        </div>
+
+        <!-- FirstLignSectionRights -->
+        <div class="firstLignThirdSectionRights">
+
+            <!-- Account Statut -->
+            <div class="accountStatus">
+                <span class="text info">{{ 'idCard.rights.thirdSection.accountStatus' | translate }} : </span>
+                <span class="text">
+                    {{ (accountStatut ? accountStatut : null) | titlecase }}
+                </span>
+            </div>
+
+            <!-- Reference Account Statut -->
+            <div class="referenceAccountStatut">
+                <span class="text info">{{ 'idCard.rights.thirdSection.reference' | translate }} : </span>
+                <span class="text">
+                    {{ (arrival.accountStatus && arrival.accountStatus.reference ? 
+                        arrival.accountStatus.reference : 
+                        null
+                        ) 
+                        | titlecase 
+                    }}
+                </span>
+            </div>
+
+        </div>
+
+        <!-- SecondLignThirdSectionRights -->
+        <div class="secondLignThirdSectionRights">
+
+            <!-- VPN -->
+            <div class="vpn">
+                <span class="text info">{{ 'idCard.rights.thirdSection.vpnAccessRequest' | translate }} : </span>
+                <span class="text"> 
+                    {{ (vpn ? vpn : null) | titlecase }}
+                </span>
+            </div>
+
+            <!-- Statut -->
+            <div class="statut">
+                <span class="text info">{{ 'idCard.rights.thirdSection.statut' | translate }} : </span>
+                <span class="text"> 
+                    {{ (statutVpn ? statutVpn : null) | titlecase }}
+                </span>
+            </div>
+                
+
+        </div>
+
+        <!-- ThirdLignThirdSectionRights -->
+        <div class="thirdLignThirdSectionRights">
+
+            <!-- ID VPN  -->
+            <div class="idVPN lastField">
+                <span class="text info">{{ 'idCard.rights.thirdSection.idVpn' | translate }} : </span>
+                <span class="text">
+                    {{ (arrival.vpn && arrival.vpn.identifiantVpn ? 
+                        arrival.vpn.identifiantVpn : 
+                        null) 
+                        | titlecase 
+                    }}
+                </span>
+            </div>
+
+            <!-- Space -->
+            <div class="space">
+            </div>
+                
+
+        </div>
+
+        
+
+        <!------------------------------------------------------------------------->
+        <!-- Fourth HeadBand -->
+        <div class="littleHeadBand">
+
+            <p class="littleTitleRights">{{ 'idCard.rights.fourthSection.title' | translate }}</p>
+
+            <!-- Assistant Edit -->
+            <button class="buttonEdit" (click)="openfourthSectionRight()">
+                <img [src]="edit" class="edition">
+            </button>
+
+        </div>
+
+        <!-- Plateform and Statut -->
+        <div class="firstLignFourthSectionRights lastField">
+
+            <!-- Platform Soft -->
+            <div class="platformSoft">
+                <span class="text info">{{ 'idCard.rights.fourthSection.platform' | translate }} : </span>
+                <span class="text">
+                    {{ (arrival.platform && arrival.platform.name ? 
+                        arrival.platform.name : 
+                        null
+                        )
+                        | titlecase 
+                    }}
+                </span>
+            </div>
+
+            <!-- Statut -->
+            <div class="statut">
+                <span class="text info">{{ 'idCard.rights.fourthSection.statut' | translate }} : </span>
+                <span class="text">
+                    {{ (statutPlatform ? statutPlatform : null) | titlecase }}
+                </span>
+            </div>
+
+        </div>
+
+        <!-- IMS and Statut -->
+        <div class="secondLignFourthSectionRights lastField">
+
+            <!-- IMS -->
+            <div class="ims right" >
+
+                <!-- Label -->
+                <p class="text info valueRight">
+                    {{ 'idCard.rights.fourthSection.ims' | translate }} : 
+                </p>
+
+                <!-- Value ims-->
+                <p class="text">
+                    {{ imsValue ? imsValue : null }}
+                </p>
+            </div>
+                
+            <!-- Statut -->
+            <div class="text info right">
+                <span class="text info">{{ 'idCard.rights.fourthSection.statut' | translate }} : </span>
+                
+                <!-- Value IMS Statut -->
+                <div class="containRight">
+                    <span>{{ (statutIMS ? statutIMS : null) | titlecase }}</span>
+                </div>
+
+            </div>
+
+        </div>
+        
+        <!-- ADD and Statut -->
+        <div class="thirdLignFourthSectionRights">
+
+            <!-- Add -->
+            <div class="add right" >
+                
+                <!-- Label -->
+                <span class="text info valueRight">
+                    {{ 'idCard.rights.fourthSection.add' | translate }} : 
+
+                    <!-- Value Add-->
+                    <div class="containRight">
+                        <span class="text">{{ (addValue ? addValue : null) | titlecase }} </span>
+                    </div>
+                </span>
+            </div>
+
+            <!-- Statut -->
+            <div class="statut">
+                <span class="text info">{{ 'idCard.rights.fourthSection.statut' | translate }} : </span>
+                <span class="text"> 
+                    {{ (statutAdd ? statutAdd : null)  | titlecase }} 
+                </span>
+            </div>
+
+        </div>
+
+        <!-- Space and Number ticket -->
+        <div class="fourthLignFourthSectionRights lastField">
+
+            <!-- Space -->
+            <div class="space">
+            </div>
+
+            <!-- Number Ticket -->
+            <div class="numberTicket right">
+                <span class="text info">
+                    {{ 'idCard.rights.fourthSection.ticketNumber' | translate }} : </span>
+
+                <!-- Value Add-->
+                <div class="containRight">
+                    <span class="text">{{ (numberTicketAdd ? numberTicketAdd : null) | titlecase }} </span>
+                </div>
+            </div>
+
+                
+
+        </div>
+
+        <!-- Limas and Statut -->
+        <div class="fifthLignFourthSectionRights">
+
+            <!-- Limas -->
+            <div class="limas right" >
+
+                <!-- Label -->
+                <span class="text info valueRight">
+                    {{ 'idCard.rights.fourthSection.limas' | translate }} : 
+
+                    <!-- Value Limas-->
+                    <div class="containRight">
+                        <span class="text">
+                            {{ (limasValue ? limasValue : null) | titlecase }}
+                        </span>
+                    </div>
+                </span>
+            </div>
+
+            <!-- Statut limas -->
+            <div class="text">
+                <span class="text info">{{ 'idCard.rights.fourthSection.statut' | translate }} : </span>
+                <span class="text">
+                    {{ (statutLimas ? statutLimas : null) | titlecase }}
+                </span>
+            </div>
+
+        </div>
+
+        <!-- Space and Number ticket -->
+        <div class="sixthLignFourthSectionRights">
+
+            <!-- Space -->
+            <div class="space">
+            </div>
+
+            <!-- Number Ticket -->
+            <div class="numberTicket right">
+                <span class="text info">{{ 'idCard.rights.fourthSection.ticketNumber' | translate }} : </span>
+                
+                <div class="containRight">
+                    <span class="text">
+                        {{ (numberTicketLimas ? numberTicketLimas : null) | titlecase }}
+                    </span>
+                </div>
+            </div>
+
+        </div>
+
+        <!-- Space and Reference User -->
+        <div class="seventhLignFourthSectionRights lastField">
+
+            <!-- Space -->
+            <div class="space">
+            </div>
+
+            <!-- Reference User -->
+            <div class="referenceUser right">
+                <span class="text info">{{ 'idCard.rights.fourthSection.referenceUser' | translate }} : </span>
+                
+                <div class="containRight">
+                    <span class="text">
+                        {{ (referenceLimas ? referenceLimas : null) | titlecase }}
+                    </span>
+                </div>
+            </div>
+
+        </div>
+
+
+        <!------------------------------------------------------------------------->
+        <!------------------------------------------------------------------------->
+        <!------------------------------------------------------------------------->
+
+        <!-- HeadBand Comment -->
+        <div class="headBand">
+            <p class="titleComment">{{ 'idCard.comment.title' | translate }}</p>
+            <button class="buttonEdit" (click)="openUpdateComment()">
+                <img [src]="edit" class="edition">
+            </button>
+        </div>
+
+        <!-- All informations about Comment -->
+        <div class="informationComment">
+
+            <!-- Comments -->
+            <div class="listComments field">
+
+                <!-- If comments exists -->
+                <div class="listComments" *ngIf="arrival.commentList" >
+                    <div class="listComments" *ngFor="let comment of arrival.commentList">
+                        <p>
+                            <span class="text info "> {{ comment.manager.name | titlecase }} {{ comment.manager.firstname  | titlecase }}
+                            </span> 
+                            <span class="text">({{ comment.manager.badge }}) - {{ comment.creationDate | date:'medium' }}</span>
+                        </p>
+                        
+                        <p>
+                            <span class="text">
+                                {{ comment.message ? comment.message : null }}
+                            </span>  
+                        </p>
+                        
+                        <hr>
+                    </div>
+                </div>
+
+                <!-- If none comments -->
+                <div class="noneInfo" *ngIf="arrival.commentList.length == 0">
+                    {{ 'idCard.comment.nonComment' | translate }}
+                </div>
+                
+            </div>
+
+        </div>
+
+        <!------------------------------------------------------------------------->
+        <!------------------------------------------------------------------------->
+        <!------------------------------------------------------------------------->
+
+        <!-- HeadBand Admin -->
+        <div class="headBand" *ngIf="isAdmin">
+            <p class="titleAdmin">{{ 'idCard.admin.title' | translate }}</p>
+        </div>
+
+        <!-- Admin -->
+        <div class="informationAdmin" *ngIf="isAdmin">
+
+            <!-- FirstLignAdmin -->
+            <div class="firstLignEquipment lastField">
+
+                <!-- Creator -->
+                <div class="creator">
+                    <span class="text info">{{ 'idCard.admin.creator' | translate }} : </span>
+                    <span class="text">{{ arrival.manager.name | titlecase }} {{ arrival.manager.firstname  | titlecase }} - {{ arrival.manager.badge }}</span>  
+                </div>
+
+                <!-- Date Creation -->
+                <div class="dateCreation">
+                    <span class="text info">{{ 'idCard.admin.dateCreation' | translate }} : </span>
+                    <span class="text">{{ arrival.creationDate | date:'medium' }}</span>
+                </div>
+
+            </div>
+
+            <!-- SecondLignAdmin -->
+            <div class="SecondLignAdmin">
+                
+                <!-- Button Delete Arrival -->
+                <div class="delete" (click)="onDeleteArrival()">
+                    <button class="buttonDelete text info">{{ 'idCard.admin.deleteArrival' | translate }}</button>
+                </div>
+
+                <!-- Button Accept Arrival -->
+                <div class="accept" (click)="onCloseArrival()">
+                    <button class="buttonAccept text info">{{ 'idCard.admin.acceptArrival' | translate }}</button>
+                </div>
+
+            </div>
+            
+        </div>
+
+    </div>
+</div>

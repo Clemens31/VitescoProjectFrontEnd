@@ -1,0 +1,97 @@
+/* All */
+.container-main {
+    height: 100%;
+    width: 100%;
+}
+
+/* Comment */
+.comment {
+    height: 80%;
+    width: 80%;
+    margin-left: 10%;
+    padding-top: 10%;
+}
+
+/* Form */
+.form {
+    height: 80%;
+}
+
+/* All input */
+.input {
+    border-radius: 20px;
+    padding-left: 10px;
+    padding-right: 10px;
+}
+
+/* Title */
+.title {
+    width: 100%;
+    height: 20%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+/* disable Textarea resizing */
+.inputComment {
+    resize:none;  
+}
+
+/* Section Comment */
+.addComment {
+    height: 40%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.sectionComment {
+    height: 100%;
+    width: 100%;
+}
+
+.containInputComment {
+    height: 100%;
+}
+
+.inputComment {
+    height: 80%;
+    width: 100%;
+}
+
+/* Section Update */
+.update {
+    height: 20%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+/* Button Update */
+.buttonUpdate {
+    width: 50%;
+    height: 50%;
+    background-color: rgba(240, 230, 19);
+    border: 1px solid;
+}
+
+/* Section Recording Completed */
+.showAnswer {
+    display: flex;
+    justify-content: center;
+    color: white;
+    padding-top: 10px;
+    padding-bottom: 10px;
+    background-color: green;
+}
+
+/** Section Result Equipment*/
+.errors {
+    display: flex;
+    justify-content: center;
+    color: white;
+    padding-top: 10px;
+    padding-bottom: 10px;
+    background-color: red;
+}

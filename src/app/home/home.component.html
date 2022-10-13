@@ -1,0 +1,48 @@
+<app-header></app-header>
+
+<div class="body-container">
+    <!-- Title -->
+    <div class="welcome">
+        <h1 class="textTitle"> {{ 'globals.titleApplication' | translate }}</h1>
+        <h3 class="tool"> {{ 'home.tools' | translate }}</h3>
+    </div>
+
+    <!-- Open Pop up List arrival -->
+    <div class="containerArrivalsList" *ngIf="displayArrivalsList">
+        <app-current-arrivals-list (sendPopupClose)="closePopupCurrentArrivals()">
+        </app-current-arrivals-list>
+    </div>
+
+    <!-- Buttons Departure / Arrival-->
+    <div class="buttons" *ngIf="!isOnlyUser">
+
+        <!-- Create Arrival -->
+        <div class="creation common" *ngIf="isManagerSHD_SHD">
+            <a class="btn_arrival" routerLink="/arrival/create-arrival" >{{ 'home.create' | translate }}</a>
+        </div>
+
+        <!-- Arrival in progress -->
+        <div class="inProgress common" *ngIf="!isOnlyUser" (click)="openCurrentArrivalsList()">
+            <a class="btn_inProcess">{{ 'home.inprogress' | translate }}</a>
+        </div>
+
+        <!-- Departure -->
+        <div class="leave common" *ngIf="!isOnlyUser">
+            <a class="btn_departure" (click)="openDeparturePage()">{{ 'globals.departure' | translate }} </a>
+        </div>
+        
+        <!-- Administration -->
+        <div class="administration common" *ngIf="isAdmin">
+            <a class="btn_administration" routerLink="/role-management">{{ 'home.administration' | translate }}</a>
+        </div>
+            
+    </div>
+
+    <!-- Container if role is only User -->
+    <div class="isOnlyUser" *ngIf="isOnlyUser">
+        <div class="containerMessage">
+            <h1 class="titleWelcome">{{ 'globals.welcome' | translate }}</h1>
+            <p class="messageNeedRights">{{ 'home.needRights' | translate }}</p>
+        </div>
+    </div>
+</div>

@@ -1,0 +1,83 @@
+<div class="header-container">
+
+  <!-- icon menu -->
+  <div class="containerIcon" (click)="openMenu()" (mouseover)="onMouseOver()" (mouseout)="onMouseOut()">
+    <img [src]="iconMenu" class="icon" > 
+  </div>
+  
+  <!-- Image -->
+  <div class="containerImageVitesco">
+    <img class="image" [src]="imgVitesco" alt="imgVitesco">
+  </div>
+
+  <!-- Selection -->
+  <div class="selection">
+
+    <!-- Home -->
+    <div class="home link" routerLink="/home">
+      <a class="btn_link">{{ 'globals.home' | translate }}</a>
+    </div>
+    <!-- Create an Arrival -->
+    <div class="create link" routerLink="/arrival/create-arrival" *ngIf="isManagerSHD_SHD">
+      <a class="btn_link">{{ 'header.create' | translate }}</a>
+    </div>
+    <!-- Arrival in Progress -->
+    <div class="inprogress link" (click)="openCurrentArrivalsList()" *ngIf="!isOnlyUser">
+      <a class="btn_link">{{ 'header.inprogress' | translate }}</a>
+    </div>
+    <!-- Departure  -->
+    <div class="departure link" (click)="openDeparturePage()" *ngIf="!isOnlyUser">
+      <a class="btn_link"> {{ 'header.departure' | translate }}</a>
+    </div>
+    <!-- Admin -->
+    <div class="admin link" routerLink="/role-management" *ngIf="isAdmin">
+      <a class="btn_link">{{ 'header.admin' | translate }}</a>
+    </div>
+
+  </div>
+
+  
+  <!-- Profile -->
+  <div class="containerProfile" (mouseover)="onMouseOverAccount()" (mouseout)="onMouseOutAccount()" > 
+    <ul class="level1">
+      <li>
+        <!-- Image Account -->
+        <img [src]="imgAccount" class="iconProfile">
+
+        <!-- Menu -->
+        <ul class="level2">
+          <li class="more">
+
+            <!-- Language -->
+            {{ 'globals.language' | translate}}
+
+              <ul class="level3">
+                <!-- English -->
+                <li (click)="selectLanguage('en')"> 
+                  <span>{{ 'globals.en' | translate}}</span>
+                  <img [src]="iconEN" class="iconEN"> 
+              </li>
+                <!-- French -->
+                <li (click)="selectLanguage('fr')">
+                  <span>{{ 'globals.fr' | translate}}</span>
+                  <img [src]="iconFR" class="iconFR"> 
+                </li>
+              </ul>
+          </li>
+
+          <!-- Support -->
+          <li (click)="openSupport()">{{ 'globals.support' | translate}}</li>
+
+          <!-- Logout-->
+          <li (click)="logout()">{{ 'globals.logout' | translate}}</li>
+        </ul>
+      </li>
+    </ul>
+  </div>
+
+</div>
+
+<!-- SideBar Menu -->
+<div id="sideBarMenu" *ngIf="display">
+  <app-side-bar-menu></app-side-bar-menu>
+</div>

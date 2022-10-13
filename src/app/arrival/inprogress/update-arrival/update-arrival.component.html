@@ -1,0 +1,206 @@
+<div class="container-main">
+    <div class="arrival">
+
+        <!-- Title -->
+        <h1 class="title">{{ 'arrival.inProgress.updateArrival.title' | translate }} </h1>
+
+        <!-- Open Pop up Confim Delete Data Other Segment -->
+        <div class="containerPopUpConfirm" *ngIf="displayPopUpConfirm">
+            <app-popup-update-arrival (sendPopupClose)="closePopupUpdateArrival()" (sendUpdateArrival)="updateArrivalFromChild($event)"
+            [arrival]="arrival" [messages]="this.arrivalUpdateService.additionalInformations">
+            </app-popup-update-arrival>
+        </div>
+
+        <!-- Form -->
+        <form class="form" [formGroup]="updateArrivalForm" (ngSubmit)="onSubmitForm()">
+
+            <!-- FirstLignArrival -->
+            <div class="firstLignArrival">
+
+                <!-- Date of Entry -->
+                <div class="dateOfEntry">
+
+                    <!-- Section Date of entry -->
+                    <div class="sectionDateOfEntry">
+                        <label class="labelDateOfEntry" for="inputDateOfEntry">{{ 'arrival.inProgress.updateArrival.dateOfEntry' | translate }} <span>  *</span> </label> 
+                        <div class="containDateOfEntry">
+                            <input  id="inputDateOfEntry" [ngModel]="this.arrival.dateOfEntry | date:'yyyy-MM-dd'"
+                            type="date" class="inputDateOfEntry input" formControlName="dateOfEntry">
+                        </div>
+                    </div>
+
+                </div>
+
+                <!-- Release Date -->
+                <div class="releaseDate">
+
+                    <!-- Section Release Date -->
+                    <div class="sectionReleaseDate">
+                        <label class="labelReleaseDate" for="inputReleaseDate">{{ 'arrival.inProgress.updateArrival.releaseDate' | translate }}</label> 
+                        <div class="containReleaseDate">
+                            <input  id="inputReleaseDate" [ngModel]="this.arrival.releaseDate | date:'yyyy-MM-dd'"
+                            type="date" class="inputReleaseDate input" formControlName="releaseDate">
+                        </div>
+                    </div>
+
+                </div>
+                
+            </div>
+
+            <!-- Place of Activity -->
+            <div class="placeOfActivity">
+
+                <!-- Section Place of Activity -->
+                <div class="sectionPlaceOfActivity">
+                    <label class="labelPlaceOfActivity" for="inputPlaceOfActivity">{{ 'arrival.inProgress.updateArrival.placeOfActivity' | translate }} <span>  *</span> </label> 
+                    <div>
+                        <select formControlName="placeOfActivity" class="selectPlaceOfActivity input" 
+                        id="selectPlaceOfActivity" (change)="onEditFieldOfficeAdress($event)">
+                            <option class="optionPlaceOfActivity" *ngFor="let item of placeOfActivities">{{ item.name | titlecase }} </option>
+                        </select>
+                        
+                    </div>
+                </div>
+
+            </div>
+
+            <!-- Office Adress -->
+            <div class="officeAdress" *ngIf="openFieldOfficeAdress">
+
+                <!-- Section Office Adress -->
+                <div class="sectionOfficeAdress">
+                    <label class="labelOfficeAdress" for="inputOfficeAdress">{{ 'arrival.inProgress.updateArrival.officeAdress' | translate }}</label> 
+                    <div class="containOfficeAdress">
+                        <input  id="inputOfficeAdress" type="text" class="inputOfficeAdress input" 
+                        formControlName="officeAdress" [ngModel]="this.arrival.officeAdress">
+                    </div>
+                </div>
+            </div>
+
+            <!-- Type of contract -->
+            <div class="typeOfContract">
+
+                <!-- Section Type of contract -->
+                <div class="sectionTypeOfContract">
+                    <label class="labelTypeOfContract" for="inputTypeOfContract">{{ 'arrival.inProgress.updateArrival.typeOfContract' | translate }} <span>  *</span> </label> 
+                    <div>
+                        <select formControlName="typeOfContract" class="selectTypeOfContract input" 
+                        id="selectTypeOfContract" (change)="onEditFieldTypeOfContract($event)">
+                            <option class="optionTypeOfContract" *ngFor="let item of typesOfContracts">{{ item.name | titlecase }}</option>
+                        </select>
+                    </div>
+                </div>
+                
+            </div>
+
+            <!-- SecondLignArrival -->
+            <div class="secondLignArrival" *ngIf="opensFieldsWhenExternalIsSelected">
+
+                <!-- OBMS -->
+                <div class="obms">
+
+                    <!-- Section OBMS -->
+                    <div class="sectionObms">
+                        <label class="labelObms" for="inputObms">{{ 'arrival.inProgress.updateArrival.obms' | translate }}</label> 
+                        <div class="containObms">
+                            <input  id="inputObms" type="text" class="inputObms input" 
+                            formControlName="obms">
+                        </div>
+                    </div>
+                </div>
+ 
+                <!-- VTOS -->
+                <div class="vtos">
+
+                    <!-- Section VTOS -->
+                    <div class="sectionVtos">
+                        <label class="labelVtos" for="inputVtos">{{ 'arrival.inProgress.updateArrival.vtos' | translate }}</label> 
+                        <div class="containVtos">
+                            <input  id="inputVtos" type="number" class="inputVtos input" 
+                            formControlName="vtos">
+                        </div>
+                    </div>
+                </div>
+                
+            </div>
+
+            <!-- ThirdLignArrival -->
+            <div class="thirdLignArrival">
+
+                <!-- VT Responsible -->
+                <div class="responsible">
+
+                    <!-- Section VT Responsible -->
+                    <div class="sectionResponsible">
+                        <label class="labelResponsible" for="inputResponsible">{{ 'arrival.inProgress.updateArrival.responsible' | translate }} <span>  *</span> </label> 
+                        <div class="containResponsible">
+                            <input  id="inputResponsible" type="text" class="inputResponsible input" formControlName="responsible"> 
+                        </div>
+                    </div>
+                </div>
+ 
+                <!-- Cost Center -->
+                <div class="costCenter">
+
+                    <!-- Section Cost Center -->
+                    <div class="sectionCostCenter">
+                        <label class="labelCostCenter" for="inputCostCenter">{{ 'arrival.inProgress.updateArrival.costCenter' | translate }} <span>  *</span> </label> 
+                        <div class="containCostCenter">
+                            <input  id="inputCostCenter" type="text" class="inputCostCenter input" formControlName="costCenter">
+                        </div>
+                    </div>
+                </div>
+                
+            </div>
+
+            <!-- FourLignArrival -->
+            <div class="fourLignArrival">
+
+                <!-- First Account -->
+                <div class="firstAccount">
+
+                    <!-- Section First Account -->
+                    <div class="sectionFirstAccount">
+                        <label class="labelFirstAccount" for="inputFirstAccount">{{ 'arrival.inProgress.updateArrival.firstAccount' | translate }} <span>  *</span> </label> 
+                        <div class="containFirstAccount">
+                            <select formControlName="firstAccount" class="selectFirstAccount input" id="selectFirstAccount">
+                                <option class="optionFirstAccount" *ngFor="let item of optionFieldFirstAccount" >{{ item | titlecase }}</option> 
+                            </select>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Plateform -->
+                <div class="plateform">
+
+                    <!-- Section Plateform -->
+                    <div class="sectionPlateform">
+                    </div>
+
+                </div>
+                
+            </div>
+
+            
+            <!-- Update button -->
+            <div class="update">
+                <button class="buttonUpdate" [disabled]="updateArrivalForm.invalid">
+                    {{ 'arrival.inProgress.updateArrival.updateArrival' | translate }}
+                </button>
+            </div>
+
+            <!-- Sucessfull -->
+            <div class="recordingCompleted" *ngIf="recordingCompleted">
+                <p class="confirm">{{ recordingCompleted }}</p>
+            </div>
+
+            <!-- Errors -->
+            <div class="errors" *ngIf="errorField">
+                <p class="error">{{ errorField }}</p>
+            </div>
+
+        </form>
+
+    </div>
+
+</div>

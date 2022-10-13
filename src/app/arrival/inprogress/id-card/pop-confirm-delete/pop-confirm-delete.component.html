@@ -1,0 +1,46 @@
+<div class="popup">
+
+    <!-- Close pop up-->
+    <div (click)="closePopup()" class="close-btn">&times;</div>
+
+    <!-- Title -->
+    <h1 class="title">{{ 'arrival.inProgress.popUpDelete.title' | translate }}</h1>
+
+    <!-- Messages -->
+    <div class="messages">
+            <h3>{{ 'arrival.inProgress.popUpDelete.message' | translate }} 
+                  <span class="employeeInfo">{{ arrival.employee.name | titlecase }} {{ arrival.employee.firstname | titlecase }}</span>  
+            </h3>
+    </div>
+
+    <!-- Section Buttons -->
+    <div class="sectionButton">
+            
+            <!-- Buttons -->
+            <div class="button">
+                    <button class="yes" (click)="onDeleteArrival()">
+                            {{ 'arrival.inProgress.popUpDelete.yes' | translate }}</button>
+                    <button class="no" (click)="closePopup()">
+                            {{ 'arrival.inProgress.popUpDelete.no' | translate }}</button>
+            </div>
+
+    </div>
+
+    <!-- Section confirm -->
+    <div class="sectionConfirm" *ngIf="isCancel">
+            <p class="confirm">{{ isCancel }}</p>
+    </div>
+
+    <!-- Message redirection -->
+    <div class="sectionRedirection" *ngIf="isCancel">
+            <p class="redirection">{{ 'arrival.inProgress.popUpDelete.redirection' | translate }}</p>
+    </div>
+
+    <!-- Section Errors -->
+    <div class="sectionError" *ngIf="errorField">
+            <p class="error">{{ errorField }}</p>
+    </div>
+
+</div>
+
+

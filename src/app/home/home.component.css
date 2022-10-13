@@ -1,0 +1,147 @@
+/* ALL */
+.body-container {
+    height: 94%;
+    width: 100%;
+}
+
+/* **********************************  */
+/* Title Application */
+/* **********************************  */
+
+/* Title Section */
+.welcome {
+    height: 20%;
+    width: 100%;
+    text-align: center;
+    color: rgba(74, 73, 68);
+    font-size: 180%;
+}
+
+/* Title h1 */
+.textTitle {
+    padding-top: 3%;
+}
+
+/* Title h3 */
+.tool {
+    color:  rgba(222, 57, 114);
+}
+
+/* **********************************  */
+/* Buttons */
+/* **********************************  */
+
+/* Buttons Section */
+.buttons { 
+    height: 75%;
+    width: 100%;
+}
+
+/* All sections */
+.creation, .leave, .inProgress, .administration {
+    width: 100%;
+    text-align: center;
+    height: 25%;
+} 
+
+/* Container if only user */
+.isOnlyUser {
+    height: 75%;
+    width: 100%;
+}
+
+/* All Buttons */
+.btn_arrival, .btn_departure, .btn_inProcess, .btn_administration {
+    background-color: rgba(74, 73, 68);
+    border: 0;
+    border-radius: 50px;
+    color: #fff;
+    cursor: pointer;
+    display: inline-block;
+    font-size: 160%;
+    padding: 1.5% 5% 1.5% 5%;
+    position: relative;
+    text-align: center;
+    text-decoration: none;
+    transition: all .3s;
+    touch-action: manipulation;
+    width: 50%;
+}
+
+.btn_departure:hover, .btn_arrival:hover, .btn_inProcess:hover, .btn_administration:hover {
+    box-shadow: rgba(255, 255, 255, .2) 0 3px 15px inset, rgba(0, 0, 0, .1) 0 3px 5px, rgba(0, 0, 0, .1) 0 10px 13px;
+    transform: scale(1.05);
+}
+
+.btn_departure:before, .btn_arrival:before, .btn_inProcess:before, .btn_administration:before {
+  background-image: linear-gradient(#fff 0, rgba(255, 255, 255, 0) 100%);
+  border-radius: 125px;
+  content: "";
+  height: 60%;
+  left: 4%;
+  opacity: .5;
+  position: absolute;
+  top: 0;
+  transition: all .3s;
+  width: 92%;
+}
+
+/* Container message if role is only User */
+.containerMessage {
+    width: 50%;
+    height: 50%;
+    top: 15%;
+    margin-bottom:0;
+    margin-left:auto;
+    margin-right:auto;
+    padding: 50px;
+    position: relative;
+    background-color: white;
+    border: 1px solid black;
+}
+
+.titleWelcome {
+    text-align: center;
+}
+
+.messageNeedRights {
+    text-align: center;
+    margin-top: 25%;
+    white-space: normal;
+}
+
+/* **********************************  */
+/* Media Query */
+/* **********************************  */
+
+
+/* Width 800 */
+@media (max-width: 800px) {
+    .welcome {
+        height: 250px;
+    }
+    .buttons {
+        height: 400px;
+    }
+    .btn_departure, .btn_arrival, .btn_inProcess, .btn_administration {
+        font-size: 120%;
+    }
+}
+
+/* Width + 2000 */
+@media (min-width: 2000px) {
+    .messageNeedRights {
+        margin-top: 15%;
+    }
+}
+
+/* Height 1300 */
+@media (max-height: 1300px) {
+    .welcome {
+        height: 200px;
+    }
+    .buttons, .isOnlyUser {
+        height: 600px;
+    }
+}
+

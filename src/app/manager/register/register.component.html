@@ -1,0 +1,71 @@
+<div class="body-container">
+
+    <!-- Image -->
+    <div class="image">
+        <img [src]="imgInit" class="imageVitesco" alt="imageVitesco"> 
+    </div>
+
+    <!-- Form -->
+    <div class="sectionForm">
+
+        <form [formGroup]="userForm" (ngSubmit)="onSubmitForm()">
+
+            <!-- Title Section-->
+            <div class="titleSection">
+                <h1 class="title">{{ 'globals.titleApplication' | translate }}</h1>
+                <h3 class="welcome">{{ 'globals.welcome' | translate }}</h3>
+
+                <!-- Registration -->
+                <h3 class="connection">{{ 'registration.registration' | translate }}</h3>
+            </div>
+
+            <!-- Form Section-->
+            <div class="form">
+
+                <!-- Container login  -->
+                <div class="containerLogin">
+                    
+                    <!-- Section Login -->
+                    <div class="sectionLogin">
+                        <label class="labelLogin" for="inputLogin"> {{ 'signIn.login' | translate }}</label> 
+                        <div class="containInputLogin">
+                            <input id="inputLogin" type="text" class="inputLogin input" formControlName="badge">
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Container Password  -->
+                <div class="containerPassword">
+        
+                    <!-- Section Password -->
+                    <div class="sectionPassword">
+                        <label class="labelPassword" for="inputPassword"> {{ 'signIn.password' | translate }}</label> 
+                        <div class="containInputPassword">
+                            <input id="inputPassword" type="password" class="inputPassword input" formControlName="password">
+                        </div>
+                    </div>
+                </div>
+                
+
+                <!-- Container if Error -->
+                <div class="containerError" *ngIf="errorConnexion">
+                    <p> {{ errorConnexion }}</p>
+                </div>
+
+                <!-- Send Button -->
+                <button class="sendButton" type="submit" [disabled]="userForm.invalid">
+                    <a class="buttonSignIn" >{{ 'globals.send' | translate }}</a>
+                </button>
+
+            </div>
+
+            <!-- Container Link Authentication -->
+            <div class="auth">
+                <a routerLink="/auth" class="buttonAuth" >{{ 'registration.auth' | translate }}</a>
+            </div>
+        </form>
+
+        
+    </div>
+
+</div>

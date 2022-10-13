@@ -1,0 +1,44 @@
+<div class="popup">
+
+        <!-- Close pop up-->
+        <div (click)="closePopup()" class="close-btn">&times;</div>
+
+        <!-- Title -->
+        <h1 class="title">{{ 'arrival.inProgress.popUpClose.title' | translate }}</h1>
+
+        <!-- Messages -->
+        <div class="messages">
+                <h3>{{ 'arrival.inProgress.popUpClose.message' | translate }} 
+                      <span class="employeeInfo">{{ arrival.employee.name | titlecase }} {{ arrival.employee.firstname | titlecase }}</span>  
+                </h3>
+        </div>
+
+        <!-- Section Buttons -->
+        <div class="sectionButton">
+                
+                <!-- Buttons -->
+                <div class="button">
+                        <button class="yes" (click)="onCloseArrival()">
+                                {{ 'arrival.inProgress.popUpClose.yes' | translate }}</button>
+                        <button class="no" (click)="closePopup()">
+                                {{ 'arrival.inProgress.popUpClose.no' | translate }}</button>
+                </div>
+
+        </div>
+
+        <!-- Section confirm -->
+        <div class="sectionConfirm" *ngIf="isArchived">
+                <p class="confirm">{{ isArchived }}</p>
+        </div>
+
+        <!-- Message redirection -->
+        <div class="sectionRedirection" *ngIf="isArchived">
+                <p class="redirection">{{ 'arrival.inProgress.popUpClose.redirection' | translate }}</p>
+        </div>
+
+        <!-- Section Errors -->
+        <div class="sectionError" *ngIf="errorField">
+                <p class="error">{{ errorField }}</p>
+        </div>
+
+</div>

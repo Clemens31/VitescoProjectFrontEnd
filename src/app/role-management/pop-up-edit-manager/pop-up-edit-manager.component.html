@@ -1,0 +1,111 @@
+<div class="popup">
+
+    <!-- Close pop up-->
+    <div (click)="closePopup()" class="close-btn">&times;</div>
+
+    <!-- Logo -->
+    <div class="cercle">
+        <img [src]="imageLogo" class="logo">
+    </div>
+
+    <!-- Form -->
+    <div class="form">
+
+        <!-- Title -->
+        <h1>{{ 'roleManagement.editManager.title' | translate }} : {{manager.badge}}</h1>
+
+        <!-- Form -->
+        <form class="contain" [formGroup]="editManagerForm" (ngSubmit)="onSubmitForm()">
+
+            
+            <!-- All checkbox -->
+            <div class="allCheckbox">
+
+                <!-- Warning-->
+                <div class="warning">
+                    <p class="warningMessage">{{ 'roleManagement.editManager.warning' | translate }}</p>
+                    <br>
+                    <p class="warningMessage">{{ 'roleManagement.editManager.adminSelectAllCheckbox' | translate }}</p>
+                </div>
+
+                <div class="allCheckbox" formGroupName="roles">
+
+                    <!-- FirstColumn -->
+                    <div class="firstColumn" >
+
+                        <!-- SHD/SHF-->
+                        <div class="form-element">
+                            <input type="checkbox" id="shd-shf" formControlName="shd"> 
+                            <label for="shd-shf">{{ 'roleManagement.editManager.shd' | translate }}</label>
+                        </div>
+
+                        <!-- Badge-->
+                        <div class="form-element">
+                            <input type="checkbox" id="badge" formControlName="badge">
+                            <label for="badge">{{ 'roleManagement.editManager.badge' | translate }}</label>
+                        </div>
+
+                        <!-- RH-->
+                        <div class="form-element">
+                            <input type="checkbox" id="rh" formControlName="rh">
+                            <label for="rh">{{ 'roleManagement.editManager.rh' | translate }}</label>
+                        </div>
+
+                        <!-- IT/FM-->
+                        <div class="form-element">
+                            <input type="checkbox" id="IT/FM" formControlName="it">
+                            <label for="IT/FM">{{ 'roleManagement.editManager.it' | translate }}</label>
+                        </div>
+
+                        <!-- Surface-->
+                        <div class="form-element">
+                            <input type="checkbox" id="surface" formControlName="surface">
+                            <label for="surface">{{ 'roleManagement.editManager.surface' | translate }}</label>
+                        </div>
+
+                    </div>
+
+                    <!-- SecondColumn -->
+                    <div class="secondColumn">
+
+                        <!--Order-->
+                        <div class="form-element">
+                            <input type="checkbox" id="order" formControlName="order">
+                            <label for="order">{{ 'roleManagement.editManager.order' | translate }}</label>
+                        </div>
+
+                        <!-- Authorization-->
+                        <div class="form-element">
+                            <input type="checkbox" id="authorization" formControlName="mil">
+                            <label for="authorization">{{ 'roleManagement.editManager.mil' | translate }}</label>
+                        </div>
+
+                        <!-- Assistant-->
+                        <div class="form-element">
+                            <input type="checkbox" id="assistant" formControlName="assistant">
+                            <label for="assistant">{{ 'roleManagement.editManager.assistant' | translate }}</label>
+                        </div>
+
+                        <!-- Admin-->
+                        <div class="form-element">
+                            <input type="checkbox" id="admin" formControlName="admin" 
+                            >
+                            <label for="admin">{{ 'roleManagement.editManager.admin' | translate }}</label>
+                        </div>
+
+                    </div>
+
+                </div>
+
+            </div>
+        </form>
+
+        <!-- Edit -->
+        <div class="form-element">
+            <button class="send" type="submit" [disabled]="editManagerForm.invalid" 
+            (click)="onSubmitForm()">{{ 'globals.edit' | translate }}</button>
+        </div>
+
+        
+    </div>
+</div>

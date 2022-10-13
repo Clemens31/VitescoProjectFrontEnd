@@ -1,0 +1,142 @@
+<div class="container-main">
+    <div class="equipment">
+
+        <!-- Title -->
+        <h1 class="title">{{ 'arrival.inProgress.upateEquipment.title' | translate }} </h1>
+
+        <!-- Form -->
+        <form class="form" [formGroup]="updateEquipmentForm" (ngSubmit)="onSubmitForm()">
+
+            <!-- ComputerModel -->
+            <div class="computerModel">
+
+                <!-- Section ComputerModel -->
+                <div>
+                    <label class="labelComputerModel" for="inputComputerModel">{{ 'arrival.inProgress.upateEquipment.computerModel' | translate }} <span>  *</span> </label> 
+                    <div>
+                        <select formControlName="computerModel" class="input" id="selectComputerModel">
+                            <option *ngFor="let item of computerModels">{{ item.name | titlecase }} </option>
+                        </select>
+                        
+                    </div>
+                </div>
+
+            </div>
+
+            <!-- ComputerType -->
+            <div class="computerType">
+
+                <!-- Section ComputerType -->
+                <div>
+                    <label class="labelComputerType" for="inputComputerType">{{ 'arrival.inProgress.upateEquipment.computerType' | translate }} <span>  *</span> </label> 
+                    <div>
+                        <select formControlName="computerType" class="input" id="selectComputerType">
+                            <option *ngFor="let item of computerTypes">{{ item.name | titlecase }} </option>
+                        </select>
+                    </div>
+                </div>
+
+            </div>
+
+            <!-- Name Computer -->
+            <div class="nameComputer">
+
+                <!-- Section Name Computer -->
+                <div>
+                    <label for="inputNameComputer">{{ 'arrival.inProgress.upateEquipment.nameComputer' | translate }}</label> 
+                    <div>
+                        <input  id="inputNameComputer" type="text" class="input" formControlName="nameComputer">
+                    </div>
+                </div>
+            </div>
+
+            <!-- List Equipments exists -->
+            <div class="listEquipments">
+
+                <!--- Title Equipments -->
+                <h3 class="titleEquipment" 
+                    *ngIf="this.arrival.equipmentNeed.equipmentList && this.arrival.equipmentNeed.equipmentList.length > 0">
+                    {{ 'arrival.inProgress.upateEquipment.listEquipments' | translate }}</h3>
+
+                <!--- Title Equipments -->
+                <h3 class="titleEquipment red"
+                    *ngIf="this.arrival.equipmentNeed.equipmentList && this.arrival.equipmentNeed.equipmentList.length == 0">
+                    {{ 'arrival.inProgress.upateEquipment.none' | translate }}</h3>
+
+                <!-- Section Display List Equipments -->
+                <div class="containerNeedEquipment">
+
+                    <!-- Message Add Equipment -->
+                    <h4 class="titleAddEquipment"> {{ 'arrival.inProgress.upateEquipment.addEquipment' | translate }}</h4>
+
+
+                    <!-- Section NeedEquipment-->
+                    <div class="sectionNeedEquipment" >
+
+                        <select class="selectNeedEquipment input" id="selectNeedEquipment" [(ngModel)]="equipmentBeingRegistered"  
+                            (change)="onEditFieldOtherEquipment($event)" formControlName="equipments">
+                            <option *ngFor="let item of listEquipmentsFromDatabase" >{{ item.name | titlecase }}</option>
+                        </select>
+                        <span *ngIf="!openFieldOtherEquipment" class="addEquipment" (click)="onAddEquipment()">{{ 'globals.add' | translate }}</span>
+                    
+                    </div>
+
+                    <!-- Section Other Equipments -->
+                    <div class="sectionOtherEquipment" *ngIf="openFieldOtherEquipment">
+
+                        <h4 class="labelOtherEquipment" for="inputOtherEquipment"> {{ 'arrival.createEmployee.equipment.otherEquipment' | translate }}</h4>
+
+                        <!-- Other Equipment  -->
+                        <div class="containInputOtherEquipment"> 
+                            <input  id="inputOtherEquipment" type="text" class="inputOtherEquipment input" 
+                            [(ngModel)]="otherEquipmentBeingRegistered" formControlName="otherEquipments">
+                            <span class="addOtherEquipment" (click)="onAddOtherEquipment()">{{ 'globals.add' | translate }}</span>
+                        </div>
+            
+                    </div>
+
+                    <!-- Section Result Equipments  -->
+                    <div class="displayEquipments" id="displayEquipments">
+                        <div class="resultEquipment" *ngFor="let item of this.equipmentResultList; let i = index" >
+                            <div class="elementEquipment">
+                                {{ item.name }}
+                            </div>
+                            <div class="checkboxEquipment">
+                                <input type="checkbox" id="checkboxAttributed" [checked]="item.attributed" (change)="updateAttribute(i)">
+                                <p class="checkboxAttributed" for="checkboxAttributed">{{ 'arrival.createEmployee.equipment.attributed' | translate }}</p>
+                            </div>
+                            <div class="containerIconDeleteEquipment" (click)="onDeleteEquipment(i)"> 
+                                <img [src]="deletedIcon" class="iconDeleteEquipment"  >
+                            </div>
+                        </div>
+                    </div>
+                        
+                </div>
+
+
+            </div>
+
+
+            <!-- Update button -->
+            <div class="update">
+                <button class="buttonUpdate">
+                    {{ 'arrival.inProgress.upateEquipment.upateEquipment' | translate }}
+                </button>
+            </div>
+
+            <!-- Sucessfull -->
+            <div class="recordingCompleted" *ngIf="recordingCompleted">
+                <p class="confirm">{{ recordingCompleted }}</p>
+            </div>
+
+            <!-- Errors -->
+            <div class="errors" *ngIf="errorField">
+                <p class="error">{{ errorField }}</p>
+            </div>
+
+        </form>
+
+    </div>
+</div>
+
+

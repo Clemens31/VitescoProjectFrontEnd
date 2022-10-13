@@ -1,0 +1,45 @@
+<div class="container-main">
+
+    <div class="comment">
+
+        <!-- Title -->
+        <h1 class="title">{{ 'arrival.inProgress.updateComment.title' | translate }}</h1>
+
+        <!-- Form -->
+        <form class="form"  [formGroup]="updateCommentForm" (ngSubmit)="onSubmitForm()"> 
+
+            <!-- Comment -->
+            <div class="addComment">
+
+                <!-- Section Comment -->
+                <div class="sectionComment">
+                    <label class="labelComment" for="inputComment"> {{ 'arrival.inProgress.updateComment.comment' | translate }}</label> 
+                    <div class="containInputComment">
+                        <textarea formControlName="comment" class="inputComment" id="inputComment"></textarea>
+                    </div>
+                </div>
+
+            </div>
+
+            <!-- Update button -->
+            <div class="update">
+                <button class="buttonUpdate">
+                    {{ 'arrival.inProgress.updateComment.update' | translate }}
+                </button>
+            </div>
+
+        </form>
+
+        <!-- Sucessfull -->
+        <div *ngIf="recordingCompleted">
+            <p class="showAnswer confirm">{{ recordingCompleted }}</p>
+        </div>
+
+        <!-- Errors -->
+        <div class="errors" *ngIf="errorField">
+            <p>{{ errorField }}</p>
+        </div>
+
+    </div>
+
+</div>

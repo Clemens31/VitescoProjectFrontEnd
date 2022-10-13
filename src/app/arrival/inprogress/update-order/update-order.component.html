@@ -1,0 +1,78 @@
+<div class="container-main">
+    <div class="order">
+
+        <!-- Title -->
+        <h1 class="title">{{ 'arrival.inProgress.updateOrder.title' | translate }} </h1>
+
+        <!-- If order can't be updated -->
+        <div class="unchangeable" *ngIf="!isExternal">
+            {{ 'arrival.inProgress.updateOrder.unchangeable' | translate }}
+        </div>
+
+        <!-- Form Is editable -->
+        <form class="form" *ngIf="isExternal" [formGroup]="updateOrderForm" (ngSubmit)="onSubmitForm()">
+        
+            <!-- Order number -->
+            <div class="orderNumber">
+
+                <!-- Section Order number -->
+                <div class="sectionOrderNumber">
+                    <label class="labelOrderNumber" for="inputOrderNumber">{{ 'arrival.inProgress.updateOrder.order' | translate }}</label> 
+                    <div class="containOrderNumber">
+                        <input  id="inputOrderNumber" type="text" class="inputOrderNumber input" 
+                        formControlName="orderNumber">
+                    </div>
+                </div>
+
+            </div>
+
+            <!-- Start of order period -->
+            <div class="startOfOrderPeriod">
+
+                <!-- Section Start of order period -->
+                <div class="sectionStartOfOrderPeriod">
+                    <label class="labelStartOfOrderPeriod" for="inputStartOfOrderPeriod">{{ 'arrival.inProgress.updateOrder.startOfOrderPeriod' | translate }}</label> 
+                    <div>
+                        <input  id="inputStartOfOrderPeriod"
+                            type="date" class="inputStartOfOrderPeriod input" formControlName="startOfOrderPeriod">
+                    </div>
+                </div>
+
+            </div>
+
+            <!-- End of order period -->
+            <div class="endOfOrderPeriod">
+
+                <!-- Section End of order period -->
+                <div class="sectionEndOfOrderPeriod">
+                    <label class="labelEndOfOrderPeriod" for="inputEndOfOrderPeriod">{{ 'arrival.inProgress.updateOrder.endOfOrderPeriod' | translate }}</label> 
+                    <div>
+                        <input  id="inputEndOfOrderPeriod"
+                            type="date" class="inputEndOfOrderPeriod input" formControlName="endOfOrderPeriod">
+                        
+                    </div>
+                </div>
+
+            </div>
+
+            <!-- Update button -->
+            <div class="update">
+                <button class="buttonUpdate" [disabled]="updateOrderForm.invalid">
+                    {{ 'arrival.inProgress.updateOrder.update' | translate }}
+                </button>
+            </div>
+
+            <!-- Sucessfull -->
+            <div class="recordingCompleted" *ngIf="recordingCompleted">
+                <p class="confirm">{{ recordingCompleted }}</p>
+            </div>
+
+            <!-- Errors -->
+            <div class="errors" *ngIf="errorField">
+                <p class="error">{{ errorField }}</p>
+            </div>
+        
+        </form>
+
+    </div>
+</div>

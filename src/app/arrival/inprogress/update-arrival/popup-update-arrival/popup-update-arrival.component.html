@@ -1,0 +1,48 @@
+<div class="popup">
+
+    <!-- Close pop up-->
+    <div (click)="closePopup()" class="close-btn">&times;</div>
+
+    <!-- Title -->
+    <h1 class="title">{{ 'arrival.inProgress.updateArrival.popup.title' | translate }} </h1>
+
+    <!-- Messages -->
+    <div class="messages">
+
+        <!-- First Message -->
+        <div class="firstWarning">
+            <h2>{{ 'arrival.inProgress.updateArrival.popup.warning' | translate }}</h2>
+        </div>
+
+        <!-- Second Message -->
+        <div class="secondWarning">
+            <h3>{{ 'arrival.inProgress.updateArrival.popup.todo' | translate }} : </h3>
+
+            <div class="allMessages"> 
+                <div class="message" *ngFor="let item of messages">
+                    <p>- {{ item }}</p>
+                </div>
+            </div>
+        </div>
+
+    </div>
+
+    <!-- Section Buttons -->
+    <div class="sectionButton">
+
+        <!-- Questions-->
+        <div class="question">
+            <p>{{ 'arrival.inProgress.updateArrival.popup.question' | translate }}</p>
+        </div>
+
+        <!-- Buttons -->
+        <div class="button">
+            <button class="yes" (click)="onYesButton()">
+                {{ 'arrival.inProgress.updateArrival.popup.yes' | translate }}</button>
+            <button class="no" (click)="onNoButton()">
+                {{ 'arrival.inProgress.updateArrival.popup.no' | translate }}</button>
+        </div>
+
+    </div>
+
+</div>
